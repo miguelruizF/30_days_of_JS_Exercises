@@ -31,3 +31,21 @@ console.log(challenge.split());
 
 //Ejercicio 10: Split the string 30 Days Of JavaScript at the space using split() method
 console.log(challenge.split(" "));
+
+//Ejercicio 11: 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string at the comma and change it to an array.
+console.log('Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'.split(','));
+
+//Ejercicio 12: Change 30 Days Of JavaScript to 30 Days Of Python using replace() method.
+let challengeChange = challenge.replace("JavaScript", "Python");
+console.log(challengeChange);
+
+//Ejercicio 13: What is character at index 15 in '30 Days Of JavaScript' string? Use charAt() method.
+console.log(challenge.charAt(15));
+
+//Ejercicio 14: What is the character code of J in '30 Days Of JavaScript' string using charCodeAt()
+console.log(challenge.charCodeAt("J"));
+
+//Ejercicio 15: Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
+console.log(challenge.indexOf("a"));
+
+//Ejercicio 16: Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript.
