@@ -104,3 +104,41 @@ let stringD = 'Python';
 let stringE = 'jargon';
 console.log(stringD.search(pattern));
 console.log(stringE.search(pattern));
+
+//Ejercicio 6: I hope this course is not full of jargon. Check if jargon is in the sentence.
+let jargon = 'jargon';
+let stringA = 'I hope this course is not full of jargon.';
+console.log(stringA.includes(jargon));
+
+//Ejercicio 7: Generate a random number between 0 and 100 inclusively
+let numRandom = Math.floor(Math.random() * 101);
+console.log(numRandom);
+
+//Ejercicio 8: Generate a random number between 50 and 100 inclusively.
+let numRandom2 = Math.floor(Math.random() * (101 - 50) + 50);
+console.log(numRandom2);
+
+//Ejercicio 9: Generate a random number between 0 and 255 inclusively.
+let numRandom3 = Math.floor(Math.random() * 256);
+console.log(numRandom3);
+
+//Ejercicio 10: Access the 'JavaScript' string characters using a random number.
+let numRandom4 = Math.floor(Math.random() * 11);
+let stringJS = "JavaScript";
+console.log(stringJS.charAt(numRandom4));
+
+//Ejercicio 11: Use console.log() and escape characters to print the following pattern. 
+/*  1 1 1 1 1
+    2 1 2 4 8
+    3 1 3 9 27
+    4 1 4 16 64
+    5 1 5 25 125 */
+
+console.log("1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125");
+
+//Ejercicio 12: Use substr to slice out the phrase because because because from the following sentence:'You cannot end a sentence with because because because is a conjunction'
+let stringB = 'You cannot end a sentence with because because because is a conjunction';
+let patternS = stringB.indexOf('because');
+let patternT = stringB.lastIndexOf('e');
+let newString = stringB.substring(patternS,patternT + 1);
+console.log(newString);
