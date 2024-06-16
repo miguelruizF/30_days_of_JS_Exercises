@@ -154,3 +154,7 @@ let miEdad = 220;
 let tuEdad  = 29;
 
 //Ejercicio 13: Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
+/* let born = Number(prompt("Enter birth year: "));
+let dato = new Date;
+let actual = dato.getFullYear();
+alert((actual-born) > 18 ? `You are ${actual-born}. You are old enough to drive`: `You are ${actual-born}. You will be allowed to drive after ${18 - (actual-born)} years.`); */
