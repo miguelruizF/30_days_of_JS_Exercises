@@ -173,3 +173,4 @@ const suma1 = ingresos.reduce((valorAnterior, valorActual) => {
 }, 0);
 
 console.log(suma1);
+console.log(suma2);
