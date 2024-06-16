@@ -117,3 +117,40 @@ let ancho = Number(prompt('Enter width: '));
 alert(`The area of the rectangle is ${largo*ancho}`); 
 alert(`The perimeter of the rectangle is ${2*(largo+ancho)}`);  */
 
+//Ejercicio 4: Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+/* const pi = Math.PI;
+let radio = Number(prompt('Enter length: '));
+alert(`The area of a circle is ${pi*(radio*radio)}`); 
+alert(`The circumference of a circle is ${2*(pi*radio)}`);  */ 
+
+//Ejercicio 5: Calculate the slope, x-intercept and y-intercept of y = 2x -2
+
+//Ejercicio 6: Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
+
+//Ejercicio 7: Compare the slope of above two questions.
+
+//Ejercicio 8: Calculate the value of y (y = x2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
+/* let y;
+let x = prompt("Enter the value of x");
+y = (x*2) + (6*x) + 9
+alert(`Result: ${y}`); */
+
+//Ejercicio 9: Write a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
+/* let horas = Number(prompt("Enter hours: "));
+let tarifa = Number(prompt("Enter rate: "));
+alert(`Your weekly earning is: ${horas*tarifa}`); */
+
+//Ejercicio 10: If the length of your name is greater than 7 say, your name is long else say your name is short.
+let nombre = "Miguel Angel";
+console.log(nombre.length > 7 ? "Your name is long" : "Your name is short");
+
+//Ejercicio 11: Compare your first name length and your family name length and you should get this output.
+let nombre2 = "Miguel Angel";
+let apellido = "Ruiz";
+console.log(nombre2.length > apellido.length ? "Your name is longer than family name" : "Your family name is longer than your name");
+
+//Ejercicio 12: Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
+let miEdad = 220;
+let tuEdad  = 29;
+
+//Ejercicio 13: Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
