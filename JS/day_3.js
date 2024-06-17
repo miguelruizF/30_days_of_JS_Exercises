@@ -158,3 +158,4 @@ let tuEdad  = 29;
 let dato = new Date;
 let actual = dato.getFullYear();
 alert((actual-born) > 18 ? `You are ${actual-born}. You are old enough to drive`: `You are ${actual-born}. You will be allowed to drive after ${18 - (actual-born)} years.`); */
+
