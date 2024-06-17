@@ -1,3 +1,5 @@
+// import * as dayjs from '../node_modules/dayjs/dayjs.min'
+
 //Ejercicio 1: Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the typeof operator to check different data types.
 let firstName = 'Miguel', 
     lastName = "Ruiz", 
@@ -159,3 +161,31 @@ let dato = new Date;
 let actual = dato.getFullYear();
 alert((actual-born) > 18 ? `You are ${actual-born}. You are old enough to drive`: `You are ${actual-born}. You will be allowed to drive after ${18 - (actual-born)} years.`); */
 
+//Ejercicio 14: Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+/*let years = Number(prompt("Enter number of years you live: "));
+let dato = new Date;
+if(years > 100){
+    alert("Nadie puede vivir mas de 100 años, intenta con otro año");
+} else {
+    alert(`Haz vivido ${(86400 * 365) * years} segundos`);
+} */
+
+//Ejercicio 15: Create a human readable time format using the Date time object
+/* YYYY-MM-DD HH:mm
+DD-MM-YYYY HH:mm
+DD/MM/YYYY HH:mm */
+let dato = new Date();
+/* let dia = dato.getDay();
+let mes = dato.getMonth() + 1;
+let anio = dato.getFullYear(); */
+const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
+}
+const fechaMX = new Intl.DateTimeFormat('es-MX', options).format(dato);
+// console.log(fechaMX)
+// console.log(dato)
+console.log(fechaMX)
