@@ -38,4 +38,33 @@ if((numero % 2 ) ===  0){
     console.log(`${numero} is an odd number`);
 } */
 
-//
+
+
+//--------------- Level 2 --------------------
+//Ejercicio 1: Write a code which can give grades to students according to theirs scores:
+/* 80-100, A
+70-89, B
+60-69, C
+50-59, D
+0-49, F */
+/* let score = Number(prompt("Enter your score: "));
+switch (true) {
+    case score <= 49:
+        console.log("your grade is F");
+        break;
+    case score <=59:
+        console.log("your grade is D");
+        break;
+    case score <= 69:
+        console.log("your grade is C");
+        break;
+    case score <= 79:
+        console.log("your grade is B");
+        break;
+    case score <= 100:
+        console.log("your grade is A");
+        break;
+    default:
+        console.log("It isn't correct, you try again");
+        break;
+} */
