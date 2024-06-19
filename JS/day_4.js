@@ -68,3 +68,41 @@ switch (true) {
         console.log("It isn't correct, you try again");
         break;
 } */
+
+//Ejercicio 2: Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
+// September, October or November, the season is Autumn.
+// December, January or February, the season is Winter.
+// March, April or May, the season is Spring
+// June, July or August, the season is Summer
+
+/* let season = prompt("Enter a season");
+switch (season) {
+    case "September":
+    case "October":
+    case "November":
+        alert("The season is Autumm");
+        break;
+    case "December":
+    case "January":
+    case "February":
+        alert("The season is Winter");
+        break;
+    case "March":
+    case "April":
+    case "May":
+        alert("The season is Spring");
+        break;
+    case "June":
+    case "July":
+    case "August":
+        alert("The season is Summer");
+    default:
+        alert("Not exist, You try again!");
+        break;
+} */
+
+//Ejercicio 3: Check if a day is weekend day or a working day. Your script will take day as an input.
+let day = prompt("What is the day today?");
+let day_convert = day.toLowerCase();
+
+day_convert === "sunday" || day_convert === "saturday" ? alert(`${day} is a weekend`) : alert("es otro dia")
