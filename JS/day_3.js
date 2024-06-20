@@ -1,3 +1,6 @@
+//----------- BOOLEANS & DATE ---------------
+
+
 // import * as dayjs from '../node_modules/dayjs/dayjs.min'
 
 //Ejercicio 1: Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the typeof operator to check different data types.
