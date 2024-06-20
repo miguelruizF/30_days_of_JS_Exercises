@@ -109,4 +109,29 @@ day_convert === "sunday" || day_convert === "saturday" ? alert(`${day} is a week
 
 
 //--------------- Level 3 --------------------
-//Ejercicio 1: 
+//Ejercicio 1: Write a program which tells the number of days in a month.
+/* let month = prompt("Enter a month: ");
+let month_convert = month.toLowerCase();
+switch (month_convert) {
+    case "january":
+    case "march":
+    case "may":
+    case "july":
+    case "august":
+    case "october":
+    case "december":
+        alert(`${month} has 31 days`);
+        break;
+    case "february":
+        alert(`${month} has 28 days`);
+        break;
+    case "april":
+    case "june":
+    case "september":
+    case "november":
+        alert(`${month} has 30 days`);
+        break
+    default:
+        alert("Don't exist this month, try again!");
+        break;
+} */
