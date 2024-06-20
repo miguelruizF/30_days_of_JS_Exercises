@@ -52,22 +52,22 @@ switch (true) {
     case score <= 49:
         console.log("your grade is F");
         break;
-    case score <=59:
-        console.log("your grade is D");
+        case score <=59:
+            console.log("your grade is D");
         break;
-    case score <= 69:
+        case score <= 69:
         console.log("your grade is C");
         break;
-    case score <= 79:
+        case score <= 79:
         console.log("your grade is B");
         break;
-    case score <= 100:
-        console.log("your grade is A");
-        break;
+        case score <= 100:
+            console.log("your grade is A");
+            break;
     default:
         console.log("It isn't correct, you try again");
         break;
-} */
+        } */
 
 //Ejercicio 2: Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
 // September, October or November, the season is Autumn.
@@ -79,30 +79,34 @@ switch (true) {
 switch (season) {
     case "September":
     case "October":
-    case "November":
-        alert("The season is Autumm");
+        case "November":
+            alert("The season is Autumm");
         break;
-    case "December":
-    case "January":
-    case "February":
+        case "December":
+            case "January":
+                case "February":
         alert("The season is Winter");
         break;
-    case "March":
-    case "April":
+        case "March":
+            case "April":
     case "May":
         alert("The season is Spring");
         break;
-    case "June":
+        case "June":
     case "July":
     case "August":
         alert("The season is Summer");
     default:
         alert("Not exist, You try again!");
         break;
-} */
+        } */
 
 //Ejercicio 3: Check if a day is weekend day or a working day. Your script will take day as an input.
-let day = prompt("What is the day today?");
+/* let day = prompt("What is the day today?");
 let day_convert = day.toLowerCase();
 
-day_convert === "sunday" || day_convert === "saturday" ? alert(`${day} is a weekend`) : alert("es otro dia")
+day_convert === "sunday" || day_convert === "saturday" ? alert(`${day} is a weekend`) : day_convert === "monday" || day_convert === "tuesday" || day_convert === "wednesday" || day_convert === "thursday" || day_convert === "friday" ? alert(`${day} is a working day`) : alert("you try again"); */
+
+
+//--------------- Level 3 --------------------
+//Ejercicio 1: 
