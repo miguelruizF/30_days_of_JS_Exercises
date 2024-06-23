@@ -45,3 +45,35 @@ console.log(mixedDataTypes.length);
 const itCompanies = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
 
 //Ejercicio 7: Print the array using console.log()
+console.log(itCompanies);
+
+//Ejercicio 8: Print the number of companies in the array
+console.log(itCompanies.length);
+
+//Ejercicio 9: Print the first company, middle and last company
+console.log(itCompanies[0]);
+console.log(itCompanies[3]);
+console.log(itCompanies[itCompanies.length - 1]);
+
+//Ejercicio 10: Print out each company
+/* const printCompanies = itCompanies.map((company)=>{
+    console.log(company);
+}); */
+
+//Ejercicio 11: Change each company name to uppercase one by one and print them out
+const printCompanies = itCompanies.map((company)=>{
+    console.log(company.toUpperCase());
+});
+
+//Ejercicio 12: Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+console.log(itCompanies.toString());
+
+//Ejercicio 13: Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+let company = prompt("Enter a company:");
+const companies = [...itCompanies];
+
+if(itCompanies.includes(company)){
+    alert(`${company} exist in arrar of itCompanies`);
+} else {
+    alert("Company is not found");
+}
