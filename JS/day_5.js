@@ -1,28 +1,4 @@
 //----------- ARRAYS ---------------
-
-const countries = [
-    'Albania',
-    'Bolivia',
-    'Canada',
-    'Denmark',
-    'Ethiopia',
-    'Finland',
-    'Germany',
-    'Hungary',
-    'Ireland',
-    'Japan',
-    'Kenya'
-]
-
-const webTechs = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Redux',
-    'Node',
-    'MongoDB'
-]
 //Ejercicio 1: Declare an empty array;
 const newArray = [];
 
@@ -126,3 +102,10 @@ let arrCompanies = [...itCompanies];
 //Ejercicio 23: Remove all IT companies
 console.log(arrCompanies.splice(0, arrCompanies[arrCompanies.length - 1]));
 
+
+
+//--------------- Level 2 --------------------
+//Ejercicio 1: Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
+
+import { countries } from "./Arrays/countries";
+import { webTechs } from "./Arrays/web_techs";
