@@ -69,11 +69,31 @@ const printCompanies = itCompanies.map((company)=>{
 console.log(itCompanies.toString());
 
 //Ejercicio 13: Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
-let company = prompt("Enter a company:");
-const companies = [...itCompanies];
-
-if(itCompanies.includes(company)){
+/* let company = prompt("Enter a company:").toLowerCase();
+let newArrayCompanies = [];
+const companies = itCompanies.map((company)=>{
+    newArrayCompanies.push(company.toLowerCase());
+})
+if(newArrayCompanies.includes(company)){
     alert(`${company} exist in arrar of itCompanies`);
 } else {
     alert("Company is not found");
-}
+} */
+
+//Ejercicio 14: Filter out companies which have more than one 'o' without the filter method
+let regExp =/(o).*\1/;
+let newArrayComp = [];
+const companies = itCompanies.map((company)=>{
+    let companyFilter = regExp.test(company);
+    if(companyFilter === true){
+        console.log(company)
+    }
+});
+
+//Ejercicio 15: Sort the array using sort() method
+console.log(itCompanies.sort());
+
+//Ejercicio 16: Reverse the array using reverse() method
+console.log(itCompanies.reverse());
+
+//Ejercicio 17: Slice out the first 3 companies from the array
