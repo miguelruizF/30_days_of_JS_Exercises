@@ -91,9 +91,38 @@ const companies = itCompanies.map((company)=>{
 });
 
 //Ejercicio 15: Sort the array using sort() method
-console.log(itCompanies.sort());
+// console.log(itCompanies.sort());
 
 //Ejercicio 16: Reverse the array using reverse() method
-console.log(itCompanies.reverse());
+// console.log(itCompanies.reverse());
 
 //Ejercicio 17: Slice out the first 3 companies from the array
+console.log(itCompanies[0].slice(1,3));
+console.log(itCompanies[1].slice(1));
+console.log(itCompanies[2].slice(2,5));
+
+
+//Ejercicio 18: Slice out the last 3 companies from the array
+console.log(itCompanies[itCompanies.length - 1].slice(1,7));
+console.log(itCompanies[itCompanies.length - 2].slice(1,5));
+console.log(itCompanies[itCompanies.length - 3].slice(1));
+
+//Ejercicio 19: Slice out the middle IT company or companies from the array
+console.log(itCompanies[3].slice(2));
+
+//Ejercicio 20: Remove the first IT company from the array
+let arrCompanies = [...itCompanies];
+// console.log(arrCompanies.shift())
+// console.log(arrCompanies);
+
+//Ejercicio 21: Remove the middle IT company or companies from the array
+// console.log(arrCompanies.splice(3, 1));
+// console.log(arrCompanies);
+
+//Ejercicio 22: Remove the last IT company from the array
+// console.log(arrCompanies.pop());
+// console.log(arrCompanies);
+
+//Ejercicio 23: Remove all IT companies
+console.log(arrCompanies.splice(0, arrCompanies[arrCompanies.length - 1]));
+
