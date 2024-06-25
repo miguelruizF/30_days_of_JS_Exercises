@@ -117,3 +117,10 @@ let text = 'I love teaching and empowering people I teach HTML CSS JS React Pyth
 let words = text.split(" ");
 console.log(words)
 console.log(words.length)
+
+//Ejercicio 3: In the following shopping cart add, remove, edit items
+/*add 'Meat' in the beginning of your shopping cart if it has not been already added
+add Sugar at the end of you shopping cart if it has not been already added
+remove 'Honey' if you are allergic to honey
+modify Tea to 'Green Tea'*/
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
