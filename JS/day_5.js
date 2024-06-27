@@ -107,9 +107,9 @@ console.log(arrCompanies.splice(0, arrCompanies[arrCompanies.length - 1]));
 //--------------- Level 2 --------------------
 //Ejercicio 1: Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
 
-// import { countries }  from "./Arrays/countries";
-// const countries = require("./Arrays/countries.mjs")
-// import { webTechs } from "./Arrays/web_techs";
+import * as world from "./Arrays/countries.js";
+// const countries_w = require("./Arrays/countries.mjs")
+import * as prog_Tech from "./Arrays/web_techs.js";
 // const webTechs = require("./Arrays/web_techs")
 
 //Ejercicio 2: First remove all the punctuations and change the string to array and count the number of words in the array
@@ -123,4 +123,29 @@ console.log(words.length)
 add Sugar at the end of you shopping cart if it has not been already added
 remove 'Honey' if you are allergic to honey
 modify Tea to 'Green Tea'*/
-const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+if(!shoppingCart.includes('Meat')){
+    shoppingCart.unshift('Meat');
+}
+if(!shoppingCart.includes("Sugar")){
+    shoppingCart.push("Sugar");
+}
+shoppingCart.splice(4, 1);
+shoppingCart[3] = 'Green Tea';
+console.log(shoppingCart);
+
+//Ejercicio 4: In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+if(world.countries.includes("Ethiopia")){
+    console.log('ETHIOPIA');
+}else{
+    world.countries.push('Ethiopia');
+}
+// console.log(world.countries);
+
+//Ejercicio 5: In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+if(prog_Tech.webTechs.includes("Sass")){
+    console.log('Sass is a CSS preprocess');
+}else{
+    prog_Tech.webTechs.push("Sass");
+}
+console.log(prog_Tech.webTechs);
