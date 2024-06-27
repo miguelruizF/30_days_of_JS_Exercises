@@ -167,7 +167,7 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
     Find the median age(one middle item or two middle items divided by two)
     Find the average age(all items divided by number of items)
     Find the range of the ages(max minus min)
-    Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array 
+    Compare the value of (min - average) and (max - average), use abs() method 
 */
 const ordArr = [...ages].sort();
 console.log(ordArr);
@@ -184,3 +184,27 @@ let countValues = ordArr.length;
 let sum = ordArr.reduce((prev, curr) => curr += prev);
 let media = sum / countValues;
 console.log(media)
+
+let minus = Math.min(...ordArr);
+let maxi = Math.max(...ordArr);
+let output = Array.from({length: maxi - minus}, (v,i) => i + minus);
+console.log(output);
+
+let sumMin = minus - median;
+let sumMax = maxi - median;
+console.log(Math.abs(sumMin));
+console.log(Math.abs(sumMax));
+
+//Ejercicio 1.1 Slice the first ten countries from the countries array 
+const ciudades = world.countries;
+// console.log(ciudades.slice(0,10));
+
+//Ejercicio 2: Find the middle country(ies) in the countries array
+let index_medium = Math.floor(ciudades.length / 2);
+console.log(index_medium)
+console.log(ciudades[index_medium]);
+
+//Ejercicio 3: Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+let indexDivide = Math.ceil(ciudades.length / 2);
+console.log(ciudades.slice(0,indexDivide));
+console.log(ciudades.slice(indexDivide, ciudades.length));
