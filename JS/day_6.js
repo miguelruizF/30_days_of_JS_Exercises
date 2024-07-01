@@ -18,7 +18,7 @@ do {
  */
 
 //Ejercicio 2: Iterate 10 to 0 using for loop, do the same using while and do while loop
-let i = 10;
+// let i = 10;
 /* for (let i = 10; i >= 0; i--) {
     console.log(i);
 } */
@@ -34,3 +34,16 @@ let i = 10;
 } while (i >= 0); */
 
 //Ejercicio 3: Iterate 0 to n using for loop
+/* let n = Number(prompt("Ingrese un numero mayor a cero"));
+for (let i = 0; i <= n; i++) {
+    console.log(i);
+} */
+
+//Ejercicio 4: Write a loop that makes the following pattern using console.log():
+/*  #
+    ##
+    ###
+    ####
+    #####
+    ######
+    ####### */
