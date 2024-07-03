@@ -100,8 +100,41 @@ for (let i = 0; i <= 6; i++) {
 } */
 
 //Ejercicio 9: Use for loop to iterate from 0 to 100 and print only prime numbers
-for (let i = 0; i <= 100; i++) {
-    for (let j = 0; j <=100; j++) {
-        
-    }  
+/* let primos = [];
+for (let i = 2; i <= 100; i++) {
+    let primo = true;
+    for (let j = 2; j < i; j++) {
+        if(i % j === 0){
+            primo = false;
+            break;
+        }
+    }
+    if(primo) primos.push(i)
 }
+console.log(primos) */
+
+//Ejercicio 10: Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+/* let suma = 0;
+for (let i = 0; i <= 100; i++) {
+    suma += i;
+}
+console.log(`The sum of all numbers from 0 to 100 is ${suma}`); */
+
+//Ejercicio 11: Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+/* let even = 0;
+let odds = 0;
+for (let i = 0; i <= 100; i++) {
+    i % 2 == 0 ? even += i : odds += i;
+}
+console.log(`The sum of all evens from 0 to 100 is ${even}`);
+console.log(`The sum of all odds from 0 to 100 is ${odds}`); */
+
+//Ejercicio 12: Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
+/* let even = 0;
+let odds = 0;
+let arr = [];
+for (let i = 0; i <= 100; i++) {
+    i % 2 == 0 ? even += i : odds += i;
+}
+arr = [even, odds];
+console.log(arr); */
