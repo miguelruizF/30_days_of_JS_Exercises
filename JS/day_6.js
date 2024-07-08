@@ -191,3 +191,15 @@ for (let i = 1; i <= limite; i++) {
     newArr.push( hexadecimal[numRandom])
 ;}
 console.log(`#${newArr.join("")}`); */
+
+//Ejercicio 3: Write a script which generates a random rgb color number: rgb(240,180,80)
+//rgb maximo = rgb(255,255,255)
+//rgb minimo = rgb(0,0,0)
+let i = 0;
+let newArr = [];
+while (i < 3 ) {
+    let numRandom = Math.floor(Math.random() * 256)
+    newArr.push(numRandom);
+    i++;
+}
+console.log(`rgb(${newArr.join(",")})`);
