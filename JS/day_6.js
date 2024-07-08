@@ -138,3 +138,30 @@ for (let i = 0; i <= 100; i++) {
 }
 arr = [even, odds];
 console.log(arr); */
+
+//Ejercicio 13: Develop a small script which generate array of 5 random numbers
+/* let newArray = [];
+for (let i = 1; i <= 5; i++) {
+    let numRandom = Math.floor(Math.random() * 100)
+    newArray.push(numRandom);
+}
+console.log(newArray); */
+
+//Ejercicio 14: Develop a small script which generate array of 5 random numbers and the numbers must be unique
+/* let newArray2 = [];
+for (let i = 1; i <= 5; i++) {
+    let numRandom = Math.floor(Math.random() * 100)
+    newArray2.push(numRandom);
+}
+console.log(newArray2); */
+
+//Ejercicio 15: Develop a small script which generate a six characters random id: 5j2khz
+let newArray = [];
+for (let i = 0; i <= 5; i++) {
+    let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+    let arrAb = abecedario.split("");
+    let indexRandom = Math.floor(Math.random() * abecedario.length);
+    // let arrNum = [0,1,2,3,4,5,6,7,8,9];
+    // console.log(indexRandom)
+    
+}
