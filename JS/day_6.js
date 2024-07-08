@@ -156,7 +156,7 @@ for (let i = 1; i <= 5; i++) {
 console.log(newArray2); */
 
 //Ejercicio 15: Develop a small script which generate a six characters random id: 5j2khz
-let newArray = [];
+/* let newArray = [];
 for (let i = 0; i <= 5; i++) {
     let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
     let indexRandom = Math.floor(Math.random() * abecedario.length);
@@ -165,3 +165,29 @@ for (let i = 0; i <= 5; i++) {
     newArray.push(abecedario[indexRandom]);
 }
 console.log(newArray.join(""));
+ */
+
+//--------------- Level 2 --------------------
+//Ejercicio 1: Develop a small script which generate any number of characters random id:   fe3jo1gl124g || xkqci4utda1lmbelpkm03rba
+/* let numRandom = Number(prompt("Ingresa un numero"));
+if(numRandom <= 1) {
+    alert("Debes ingresar un numero mayor a 1");
+} else {
+    let newArray = [];
+    for (let i = 0; i < numRandom; i++) {
+        let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+        let indexRandom = Math.floor(Math.random() * abecedario.length);
+        newArray.push(abecedario[indexRandom]);
+    }
+    alert(`Tu nuevo id es ${newArray.join("")}`);
+} */
+
+//Ejercicio 2: Write a script which generates a random hexadecimal number.
+/* let newArr = [];
+let limite = 6;
+let hexadecimal = "0123456789ABCDEF";
+for (let i = 1; i <= limite; i++) {
+    let numRandom = Math.floor(Math.random() * hexadecimal.length);
+    newArr.push( hexadecimal[numRandom])
+;}
+console.log(`#${newArr.join("")}`); */
