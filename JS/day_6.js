@@ -195,11 +195,51 @@ console.log(`#${newArr.join("")}`); */
 //Ejercicio 3: Write a script which generates a random rgb color number: rgb(240,180,80)
 //rgb maximo = rgb(255,255,255)
 //rgb minimo = rgb(0,0,0)
-let i = 0;
+/* let i = 0;
 let newArr = [];
 while (i < 3 ) {
     let numRandom = Math.floor(Math.random() * 256)
     newArr.push(numRandom);
     i++;
 }
-console.log(`rgb(${newArr.join(",")})`);
+console.log(`rgb(${newArr.join(",")})`); */
+
+//Ejercicio 4: Using the above countries array, create the following new array.
+import * as world from "./Arrays/countries.js";
+import * as prog_Tech from "./Arrays/web_techs.js";
+
+/* const newArr = []
+for(const country of world.countries){
+    newArr.push(country.toUpperCase())
+}
+console.log(newArr); */
+
+//Ejercicio 5: Using the above countries array, create an array for countries length'.
+/* const newArr = []
+for(const country of world.countries){
+    newArr.push(country.length)
+}
+console.log(newArr); */
+
+//Ejercicio 6: Use the countries array to create the following array of arrays:
+/* [
+    ['Albania', 'ALB', 7],
+    ['Bolivia', 'BOL', 7],
+    ['Canada', 'CAN', 6],
+    ['Denmark', 'DEN', 7],
+    ['Ethiopia', 'ETH', 8],
+    ['Finland', 'FIN', 7],
+    ['Germany', 'GER', 7],
+    ['Hungary', 'HUN', 7],
+    ['Ireland', 'IRE', 7],
+    ['Iceland', 'ICE', 7],
+    ['Japan', 'JAP', 5],
+    ['Kenya', 'KEN', 5]
+] */
+/* const newArr = []
+for(const country of world.countries){
+    let newArr2 = [];
+    newArr2.push(country, country.slice(0,3).toUpperCase(),country.length)
+    newArr.push(newArr2);
+}
+console.log(newArr);  */
