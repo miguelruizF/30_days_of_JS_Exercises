@@ -245,3 +245,14 @@ for(const country of world.countries){
 console.log(newArr);  */
 
 //Ejercicio 7: In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+const newArr = []
+for(const country of world.countries){
+    if(country.includes("land")){
+        newArr.push(country);
+    }
+}
+if(newArr.length === 0){
+    console.log("All these countries are without land");
+}else{
+    console.log(newArr); 
+}
