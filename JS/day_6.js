@@ -242,10 +242,10 @@ for(const country of world.countries){
     newArr2.push(country, country.slice(0,3).toUpperCase(),country.length)
     newArr.push(newArr2);
 }
-console.log(newArr);  */
+console.log(newArr);  *
 
 //Ejercicio 7: In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
-const newArr = []
+/* const newArr = []
 for(const country of world.countries){
     if(country.includes("land")){
         newArr.push(country);
@@ -255,4 +255,6 @@ if(newArr.length === 0){
     console.log("All these countries are without land");
 }else{
     console.log(newArr); 
-}
+} */
+
+//Ejercicio 8: In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
