@@ -258,3 +258,27 @@ if(newArr.length === 0){
 } */
 
 //Ejercicio 8: In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+/* const newArr = []
+for(const country of world.countries){
+    if(country.endsWith("ia")){
+        newArr.push(country);
+    }
+}
+if(newArr.length === 0){
+    console.log("These are countries ends without ia");
+}else{
+    console.log(newArr); 
+}  */
+
+//Ejercicio 9: Using the above countries array, find the country containing the biggest number of characters.
+const newArr = []
+for(const country of world.countries){
+    newArr.push(country.length)
+}
+
+for (let i = 0; i < world.countries.length; i++) {
+    if(world.countries[i].length == Math.max(...newArr)){
+        console.log(world.countries[i]);
+    }
+}
+
