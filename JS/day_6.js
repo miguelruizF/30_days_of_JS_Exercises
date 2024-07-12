@@ -271,7 +271,7 @@ if(newArr.length === 0){
 }  */
 
 //Ejercicio 9: Using the above countries array, find the country containing the biggest number of characters.
-const newArr = []
+/* const newArr = []
 for(const country of world.countries){
     newArr.push(country.length)
 }
@@ -280,5 +280,6 @@ for (let i = 0; i < world.countries.length; i++) {
     if(world.countries[i].length == Math.max(...newArr)){
         console.log(world.countries[i]);
     }
-}
+} */
 
+//Ejercicio 10: Using the above countries array, find the country containing only 5 characters.
