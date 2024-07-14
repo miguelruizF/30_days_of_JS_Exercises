@@ -207,6 +207,7 @@ console.log(`rgb(${newArr.join(",")})`); */
 //Ejercicio 4: Using the above countries array, create the following new array.
 import * as world from "./Arrays/countries.js";
 import * as prog_Tech from "./Arrays/web_techs.js";
+import * as mern from './Arrays/mern.js';
 
 /* const newArr = []
 for(const country of world.countries){
@@ -319,3 +320,41 @@ for (let i = 0; i < prog_Tech.webTechs.length; i++) {
 console.log(newArr); */
 
 //Ejercicio 13: An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+/* const newArr = [];
+for (const mernAcro of mern.mernStack) {
+    newArr.push(mernAcro.slice(0,1));
+}
+console.log(newArr.join("")); */
+
+//Ejercicio 14: Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+/* for (let i = 0; i < prog_Tech.webTechs.length; i++) {
+    console.log(prog_Tech.webTechs[i]);
+} */
+
+//Ejercicio 15: This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+/* const newArr = [];
+const fruits = ['banana', 'orange', 'mango', 'lemon']
+for (let i = 0; i < fruits.length; i++) {
+    newArr.unshift(fruits[i])
+}
+console.log(newArr);
+ */
+//Ejercicio 16: Print all the elements of array as shown below.
+/* HTML
+CSS
+JS
+REACT
+NODE
+EXPRESS
+MONGODB */
+/* const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+]
+const newArr = fullStack[0].concat(fullStack[1]);
+for (const tech of newArr) {
+    console.log(tech);
+} */
+
+
+//--------------- Level 3 --------------------
