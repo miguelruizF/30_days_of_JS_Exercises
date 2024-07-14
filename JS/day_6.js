@@ -159,13 +159,13 @@ console.log(newArray2); */
 /* let newArray = [];
 for (let i = 0; i <= 5; i++) {
     let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+    let arrAb = abecedario.split("");
     let indexRandom = Math.floor(Math.random() * abecedario.length);
     // let arrNum = [0,1,2,3,4,5,6,7,8,9];
     // console.log(indexRandom)
-    newArray.push(abecedario[indexRandom]);
-}
-console.log(newArray.join(""));
- */
+    
+} */
+
 
 //--------------- Level 2 --------------------
 //Ejercicio 1: Develop a small script which generate any number of characters random id:   fe3jo1gl124g || xkqci4utda1lmbelpkm03rba
@@ -283,3 +283,39 @@ for (let i = 0; i < world.countries.length; i++) {
 } */
 
 //Ejercicio 10: Using the above countries array, find the country containing only 5 characters.
+/* const newArr = [];
+const newArr2 = [];
+for(const country of world.countries){
+    newArr.push(country.length)
+}
+
+for (let i = 0; i < world.countries.length; i++) {
+    if(world.countries[i].length == 5){
+        newArr2.push(world.countries[i]);
+    }
+} 
+console.log(newArr2); */
+
+//Ejercicio 11: Find the longest word in the webTechs array 
+/* const newArr = [];
+for (const webTech of prog_Tech.webTechs) {
+    newArr.push(webTech.length);
+    console.log(webTech, webTech.length);
+}
+for (let i = 0; i < prog_Tech.webTechs.length; i++) {
+    if(prog_Tech.webTechs[i].length == Math.max(...newArr)){
+        console.log(prog_Tech.webTechs[i]);
+    }
+} */
+
+//Ejercicio 12: Use the webTechs array to create the following array of arrays:
+/* [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]   
+const newArr = [];
+for (let i = 0; i < prog_Tech.webTechs.length; i++) {
+    let arr = [];
+    arr.push(prog_Tech.webTechs[i],prog_Tech.webTechs[i].length);
+    newArr.push(arr);
+}
+console.log(newArr); */
+
+//Ejercicio 13: An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
