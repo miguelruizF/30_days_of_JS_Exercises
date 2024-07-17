@@ -392,3 +392,23 @@ for (let i = 0; i < sortedCountries.length; i++) {
         console.log(sortedCountries[i]);
     }
 } 
+
+//Ejercicio 6: Extract all the countries contain the word 'land' from the countries array and print it as array
+const newArrCountries2 = []
+for(const country of sortedCountries){
+    if(country.includes("land")){
+        newArrCountries2.push(country);
+    }
+}
+console.log(newArrCountries2);
+
+//Ejercicio 7: Extract all the countries containing only four characters from the countries array and print it as array
+const arrCountriesFourChar = []
+for(const country of sortedCountries){
+    if(country.length === 4){
+        arrCountriesFourChar.push(country);
+    }
+}
+console.log(arrCountriesFourChar);
+
+//Ejercicio 8: Extract all the countries containing two or more words from the countries array and print it as array
