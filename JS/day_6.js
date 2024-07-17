@@ -358,3 +358,37 @@ for (const tech of newArr) {
 
 
 //--------------- Level 3 --------------------
+//Ejercicio 1: Copy countries array(Avoid mutation)
+const newCountries = [...world.countries];
+console.log(newCountries);
+
+//Ejercicio 2: Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+let sortedCountries = [...newCountries].sort();
+console.log(sortedCountries);
+
+//Ejercicio 3: Sort the webTechs array and mernStack array
+let sortedWebTechs = [...prog_Tech.webTechs].sort();
+let sortedMernStack = [...mern.mernStack].sort();
+console.log(sortedWebTechs);
+console.log(sortedMernStack);
+
+//Ejercicio 4: Extract all the countries contain the word 'land' from the countries array and print it as array
+const newArrCountries = []
+for(const country of sortedCountries){
+    if(country.includes("land")){
+        newArrCountries.push(country);
+    }
+}
+console.log(newArrCountries);
+
+//Ejercicio 5: Find the country containing the hightest number of characters in the countries array
+const arrCountriesLength = [];
+for (const country of sortedCountries) {
+    arrCountriesLength.push(country.length);
+    // console.log(webTech, webTech.length);
+}
+for (let i = 0; i < sortedCountries.length; i++) {
+    if(sortedCountries[i].length == Math.max(...arrCountriesLength)){
+        console.log(sortedCountries[i]);
+    }
+} 
