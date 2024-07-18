@@ -412,3 +412,25 @@ for(const country of sortedCountries){
 console.log(arrCountriesFourChar);
 
 //Ejercicio 8: Extract all the countries containing two or more words from the countries array and print it as array
+const arrCountriesMoreChar = []
+for(const country of sortedCountries){
+    if(country.split(" ").length > 1){
+        arrCountriesMoreChar.push(country);
+    }
+}
+console.log(arrCountriesMoreChar);
+
+//Ejercicio 9: Reverse the countries array and capitalize each country and stored it as an array
+let newArrReverse = sortedCountries.reverse();
+newArrReverse.forEach(country => {
+    console.log(capitalizar(country));
+})
+// console.log(newArrReverse);
+
+function capitalizar(texto){
+    let capitalizarArr = [];
+    for (const palabra of texto.split(" ")) {
+        capitalizarArr.push(palabra[0].toUpperCase() + palabra.substring(1))
+    }
+    return capitalizarArr.join(" ");
+}
