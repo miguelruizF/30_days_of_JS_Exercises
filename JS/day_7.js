@@ -69,17 +69,79 @@ function weight(mass, gravity) {
 }
 console.log(weight(550.456, 323.645));
 
-//Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelsiusToFahrenheit.
+//Ejercicio 12: Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelsiusToFahrenheit.
 function convertCelsiusToFahrenheit(celsius) {
     let conversion = (celsius * (9/5)) +32;
     return `El resultado de la conversion es: ${conversion} °F`;
 }
 console.log(convertCelsiusToFahrenheit(15));
 
-//Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below.
+//Ejercicio 13: Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below.
 
 /* The same groups apply to both men and women.
 Underweight: BMI is less than 18.5
 Normal weight: BMI is 18.5 to 24.9
 Overweight: BMI is 25 to 29.9
 Obese: BMI is 30 or more */
+
+function bmiCalculate(weight, height) {
+    let result = weight / (height * height);
+    switch (true) {
+        case result < 18.5:
+            console.log('Underweight');
+            break;
+        case result >= 18.5 && result <= 24.9 :
+            console.log('Normal');
+            break;  
+        case result >= 25 && result <= 29.9 :
+            console.log('Overweight');
+            break;  
+        case result > 30 :
+            console.log('Obese');
+            break;  
+        default:
+            console.log('You try again');
+            break;
+    }
+    // console.log(result);
+}
+bmiCalculate(70, 1.56);
+
+//Ejercicio 14: Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+/* function checkSeason() {
+    let season = prompt("Enter a season");
+    switch (season) {
+        case "September":
+        case "October":
+        case "November":
+            console.log("The season is Autumm");
+            break;
+        case "December":
+        case "January":
+        case "February":
+            console.log("The season is Winter");
+            break;
+        case "March":
+        case "April":
+        case "May":
+            console.log("The season is Spring");
+            break;
+        case "June":
+        case "July":
+        case "August":
+            console.log("The season is Summer");
+        default:
+            console.log("Not exist, You try again!");
+            break;
+    }
+}
+checkSeason(); */
+
+//Ejercicio 15: Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.
+function findMax() {
+    let numbers = [...arguments];
+    const numMax = numbers.sort( (a, b) => a - b)
+    //console.log(numbers);
+    console.log(`El numero mayor es: ${numMax[2]}`);
+}
+findMax(88600,6366,890);
