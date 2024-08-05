@@ -145,3 +145,23 @@ function findMax() {
     console.log(`El numero mayor es: ${numMax[2]}`);
 }
 findMax(88600,6366,890);
+
+//--------------- Level 2 --------------------
+//Ejercicio 1: Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+function printArray(arr) {
+    if(Array.isArray(arr)){
+        // console.log('Es un array');
+        arr.forEach(valor => {
+            console.log(valor);
+        })
+    }
+}
+printArray([1,8,'oh']);
+
+//Ejercicio 2: Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+function showDateTime() {
+    const today = new Date;
+    console.log(today.toLocaleString('en-US', { hour12: false }));
+    
+}
+showDateTime();
