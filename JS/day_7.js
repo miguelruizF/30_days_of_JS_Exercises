@@ -165,3 +165,56 @@ function showDateTime() {
     
 }
 showDateTime();
+
+//Ejercicio 3: Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+function reverseArray(arr) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.unshift(arr[i]);
+    }
+    console.log(newArr);
+}
+reverseArray([1,2,3,4,5,6]);
+reverseArray(['A', 'B', 'C']);
+
+//Ejercicio 4: Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+function capitalizeArray(arr) {
+    const newArr = [];
+    arr.map(string => {
+        let newString = string.charAt(0).toUpperCase() + string.slice(1);
+        // console.log(newString);
+        newArr.push(newString)
+    });
+    console.log(newArr);
+}
+capitalizeArray(["hola", "mundo", "aqui", "de", "nuevo"]);
+
+//Ejercicio 5: Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+function addItem(parameters) {
+    const newArr = [];
+    newArr.push(parameters);
+    console.log(newArr);
+}
+addItem('hola');
+
+//Ejercicio 6: Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+function removeItem(arr, index) {
+    const indexArr = arr.indexOf(index);
+    if(indexArr > -1){
+        arr.splice(indexArr, 1);
+    }
+    console.log(arr);
+    
+}
+removeItem([1,2,3,4,5,6], 2);
+
+//Ejercicio 7: Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+function sumOfNumbers(number) {
+    let suma = 0;
+    for (let index = 1; index <= number; index++) {
+        // console.log(index);
+        suma += index;
+    }
+    console.log(suma);
+}
+sumOfNumbers(100);
