@@ -218,3 +218,42 @@ function sumOfNumbers(number) {
     console.log(suma);
 }
 sumOfNumbers(100);
+
+//Ejercicio 8: Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+function sumOfOdds(num) {
+    let suma = 0;
+    for( let i = 0; i <= num; i++ ){
+        if( i % 2 !== 0){
+            suma += i;
+        }
+    }
+    console.log(suma);
+}
+sumOfOdds(50);
+
+//Ejercicio 9: Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+function sumOfEven(num) {
+    let suma = 0;
+    for( let i = 0; i <= num; i++ ){
+        if( i % 2 == 0){
+            suma += i;
+        }
+    }
+    console.log(suma);
+}
+sumOfEven(50);
+
+//Ejercicio 10: Declare a function name evensAndOdds. It takes a positive integer as parameter and it counts number of evens and odds in the number.
+function evensAndOdds(num) {
+    let odds = [];
+    let evens = [];
+    if(num > 0){
+        for( let i = 0; i <= num; i++ ){
+            i % 2 == 0 ? evens.push( i ) : odds.push( i );
+        }
+    }
+    console.log(`The length in odd numbers is: ${odds.length} and the length in even numbers is: ${evens.length}`);
+}
+evensAndOdds(100);
+
+//Ejercicio 11: Write a function which takes any number of arguments and return the sum of the arguments
