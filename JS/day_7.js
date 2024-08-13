@@ -257,3 +257,14 @@ function evensAndOdds(num) {
 evensAndOdds(100);
 
 //Ejercicio 11: Write a function which takes any number of arguments and return the sum of the arguments
+function sumOfArguments() {
+    let sum = 0;
+    // const args = Array.from(arguments);
+    for( let i = 0; i < arguments.length; i++ ){
+        sum += arguments[i];
+    }
+    console.log(sum);
+}
+sumOfArguments(5,8,6,10,5);
+
+//Ejercicio 15: Write a function which generates a randomUserIp.
