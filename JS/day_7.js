@@ -268,3 +268,23 @@ function sumOfArguments() {
 sumOfArguments(5,8,6,10,5);
 
 //Ejercicio 15: Write a function which generates a randomUserIp.
+//Example: 255.255.255.255
+function randomUserIp() {
+    let arrIP = [];
+    for (let i = 1; i <= 4; i++) {
+        let numRandom = Math.floor(Math.random() * 256);
+        arrIP.push(numRandom);
+    }
+
+    console.log(`The IP number is ${arrIP.join(".")}`);
+}
+randomUserIp();
+
+//Write a function which generates a randomMacAddress
+//Example: xx:xx:xx:xx:xx:xx
+//0-9 and AF
+function randomMacAddress() {
+    let hexadecimal = '0123456789ABCDEF';
+    
+}
+randomMacAddress()
