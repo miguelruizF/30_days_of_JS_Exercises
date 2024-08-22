@@ -327,3 +327,41 @@ function userIdGenerator() {
     return newArray.join('');
 }
 console.log(userIdGenerator());
+
+
+//--------------- Level 3 --------------------
+
+//Ejercicio 1: Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+/* userIdGeneratedByUser()
+'kcsy2
+SMFYb
+bWmeq
+ZXOYh
+2Rgxf
+'
+userIdGeneratedByUser()
+'1GCSgPLMaBAVQZ26
+YD7eFwNQKNs7qXaT
+ycArC5yrRupyG00S
+UbGxOFI7UXSWAyKN
+dIV0SSUTgAdKwStr
+' */
+function userIdGeneratedByUser() {
+    let numberOfCharacters = Number(prompt('Enter a number: '));
+    // let numberOfIds = Number(prompt('Enter another number: '));
+    let arrId = [];
+    // let arrIDS = [];
+    // let j = 1;
+    // while ( j <= numberOfIds) {
+        for (let i = 1; i <= numberOfCharacters; i++) {
+            let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+            let indexRandom = Math.floor(Math.random() * abecedario.length);
+            arrId.push(abecedario[indexRandom]);
+        }
+        // arrIDS.push(arrId);
+        // j++;
+    // }
+    console.log(arrId.join(''));
+    
+}
+userIdGeneratedByUser();
