@@ -280,11 +280,50 @@ function randomUserIp() {
 }
 randomUserIp();
 
-//Write a function which generates a randomMacAddress
+//Ejercicio 16: Write a function which generates a randomMacAddress
 //Example: xx:xx:xx:xx:xx:xx
 //0-9 and AF
 function randomMacAddress() {
-    let hexadecimal = '0123456789ABCDEF';
-    
+    let arrMac = [];
+    let j = 1;
+    while (j <= 6) {
+        let arrPar = [];
+        for (let i = 1; i <= 2; i++) {
+            let hexadecimal = '0123456789ABCDEF';
+            let parRandom = Math.floor(Math.random() * hexadecimal.length);
+            arrPar.push(hexadecimal[parRandom]);
+        }
+        arrMac.push(arrPar.join(''))
+        j++
+    }
+    console.log(`Your MAC Address is : ${arrMac.join(':')}`);
 }
-randomMacAddress()
+randomMacAddress();
+
+//Ejercicio 17: Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+/* console.log(randomHexaNumberGenerator());
+'#ee33df' */
+function randomHexaNumberGenerator() {
+    let newArr = [];
+    let hexadecimal = "0123456789ABCDEF";
+    for (let i = 1; i <= 6; i++) {
+        let numRandom = Math.floor(Math.random() * hexadecimal.length);
+        newArr.push( hexadecimal[numRandom]);
+    ;}
+    return `#${newArr.join("").toLowerCase()}`;
+}
+console.log(randomHexaNumberGenerator());
+
+//Ejercicio 18: Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+/* console.log(userIdGenerator());
+41XTDbE */
+function userIdGenerator() {
+    let newArray = [];
+    for (let i = 1; i <= 6; i++) {
+        let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+        let indexRandom = Math.floor(Math.random() * abecedario.length);
+        newArray.push(abecedario[indexRandom]);
+    }
+    return newArray.join('');
+}
+console.log(userIdGenerator());
