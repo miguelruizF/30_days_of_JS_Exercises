@@ -346,22 +346,69 @@ ycArC5yrRupyG00S
 UbGxOFI7UXSWAyKN
 dIV0SSUTgAdKwStr
 ' */
-function userIdGeneratedByUser() {
+/* function userIdGeneratedByUser() {
     let numberOfCharacters = Number(prompt('Enter a number: '));
-    // let numberOfIds = Number(prompt('Enter another number: '));
-    let arrId = [];
-    // let arrIDS = [];
-    // let j = 1;
-    // while ( j <= numberOfIds) {
+    let numberOfIds = Number(prompt('Enter another number: '));
+    let arrIDS = [];
+    let j = 1;
+    while ( j <= numberOfIds) {
+        let arrId = [];
         for (let i = 1; i <= numberOfCharacters; i++) {
             let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
             let indexRandom = Math.floor(Math.random() * abecedario.length);
             arrId.push(abecedario[indexRandom]);
         }
-        // arrIDS.push(arrId);
-        // j++;
-    // }
-    console.log(arrId.join(''));
-    
+        arrIDS.push(arrId.join(''));
+        j++;
+    }
+    arrIDS.forEach(id =>console.log(`Your id is: ${id}`));
 }
-userIdGeneratedByUser();
+userIdGeneratedByUser(); */
+
+//Ejercicio 2: Write a function name rgbColorGenerator and it generates rgb colors.
+function rgbColorGenerator() {
+    let i = 0;
+    let newArr = [];
+    while (i < 3 ) {
+        let numRandom = Math.floor(Math.random() * 256)
+        newArr.push(numRandom);
+        i++;
+    }
+    console.log(`rgb(${newArr.join(",")})`);
+}
+rgbColorGenerator();
+
+//Ejercicio 3: Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+function arrayOfHexaColors() {
+    let newArr = [];
+    let hexadecimal = "0123456789ABCDEF";
+    for (let i = 1; i <= 6; i++) {
+        let numRandom = Math.floor(Math.random() * hexadecimal.length);
+        newArr.push( hexadecimal[numRandom]);   
+    }
+    return `#${newArr.join("")}`;
+}
+console.log(arrayOfHexaColors());
+
+//Ejercicio 4: Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+/* function arrayOfRgbColors() {
+    let numbersOfColors = Number(prompt('Enter a number: '));
+    let arrTotal = [];
+    let unique = 1;
+    while (unique <= numbersOfColors) {
+        let i = 0;
+        let newArr = [];
+        while (i < 3 ) {
+            let numRandom = Math.floor(Math.random() * 256)
+            // newArr.join(',');
+            newArr.push(numRandom);
+            i++;
+        }
+        arrTotal.push(`rgb(${newArr})`);
+        unique++;
+    }
+    return arrTotal;
+}
+console.log(arrayOfRgbColors()); */
+
+//Ejercicio 5: Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
