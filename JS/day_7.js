@@ -405,10 +405,78 @@ console.log(arrayOfHexaColors());
             i++;
         }
         arrTotal.push(`rgb(${newArr})`);
-        unique++;
+        unique++;   
     }
     return arrTotal;
 }
 console.log(arrayOfRgbColors()); */
 
 //Ejercicio 5: Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+function convertHexaToRgb(hexa) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexa);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null
+}
+console.log(convertHexaToRgb("#aabbcc"));
+
+//Ejercicio 6: Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+function convertRgbToHexa() {
+    let arrHex = [];
+    let hex = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        hex = arguments[i].toString(16);
+        if(hex.length == 1){
+            hex = "0" + hex
+        }else{
+            hex;
+        }
+        arrHex.push(hex)
+    }
+    console.log(`#${arrHex.join("")}`);
+}
+convertRgbToHexa(9,20,30);
+
+//Ejercicio 7: Write a function generateColors which can generate any number of hexa or rgb colors.
+function generateColors(typeOfColor, numberOfColor) {
+    if(typeOfColor === "rgb"){
+        let arrTotal = [];
+        let unique = 1;
+        while (unique <= numberOfColor) {
+            let i = 0;
+            let newArr = [];
+            while (i < 3 ) {
+                let numRandom = Math.floor(Math.random() * 256);
+                newArr.push(numRandom);
+                i++;
+            }
+            arrTotal.push(`rgb(${newArr})`);
+            unique++;   
+        }
+        console.log(arrTotal);
+    }else if(typeOfColor === "hexa"){
+        let arrTotal = [];
+        let init = 1;
+        while(init <= numberOfColor){
+            let newArr = [];
+            let hexadecimal = "0123456789ABCDEF";
+            for (let i = 1; i <= 6; i++) {
+                let numRandom = Math.floor(Math.random() * hexadecimal.length);
+                newArr.push( hexadecimal[numRandom]);   
+            }
+            arrTotal.push(`#${newArr.join("")}`);
+            init++;
+        }
+        console.log(arrTotal);
+    }else{
+        console.log('You must enter only hexa or rgb')
+    }
+}
+generateColors('rgb', 5);
+
+//Ejercicio 8: Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+function sumOfArrayItems(arrOfNumbers) {
+    
+}
