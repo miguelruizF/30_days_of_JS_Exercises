@@ -478,5 +478,41 @@ generateColors('rgb', 5);
 
 //Ejercicio 8: Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
 function sumOfArrayItems(arrOfNumbers) {
-    
+    let total = 0;
+    let isNumber = (currentValue) => typeof(currentValue) === 'number';
+    if(arrOfNumbers.every(isNumber)){
+        arrOfNumbers.forEach(number => total+=number);
+        console.log(total);
+    }else{
+        console.log('an element is not a number');
+    }
 }
+sumOfArrayItems([1,8,3,4,5]);
+
+//Ejercicio 9: Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+function average(arr) {
+    let totalAverage = 0;
+    let average = arr.length;
+
+    let isNumber = (currentValue) => typeof(currentValue) === 'number';
+    if(arr.every(isNumber)){
+        arr.forEach(number => console.log((totalAverage+=number)/average));
+    }else{
+        console.log('an element is not a number');
+    }
+}
+average([1,2,"d",4,5]);
+
+//Ejercicio 10: Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+function modifyArray(arr) {
+    if(arr.length < 5){
+        console.log('Item not found');
+    }else{
+        for (let i = 1; i < arr.length; i++) {
+            const element = arr[4].toUpperCase();
+            arr[4] = element;
+        }
+        console.log(arr);
+    }
+}
+modifyArray(["as","cd","ernes","Alonso","oser"]);
