@@ -516,3 +516,54 @@ function modifyArray(arr) {
     }
 }
 modifyArray(["as","cd","ernes","Alonso","oser"]);
+
+//Ejercicio 11: Write a function called isPrime, which checks if a number is prime number.
+function isPrime(num) {
+    console.log(num % 2 === 0 ? 'is Prime' : 'is not Prime');
+}
+isPrime(10);
+isPrime(5);
+
+//Ejercicio 12: Write a functions which checks if all items are unique in the array.
+function noRepite(arr) {
+    const uniques = new Set(arr).size !== arr.length; //Set allows you to store unique values
+    uniques === false ? console.log('All items are uniques') : console.log('The array contains numbers that are not unique');
+}
+noRepite([1,2,5,5,3]);
+noRepite([1,4,5,2,3]);
+
+//Ejercicio 13: Write a function which checks if all the items of the array are the same data type.
+function sameType(arr) {
+    const allEqual = arr.every(val => typeof(val) === typeof(arr[0]));
+    allEqual === true ? console.log("All items are of the same type") : console.log('Some items are not of the same type');
+}
+sameType([1, 2, 2, 3]);
+sameType([1, "2", 2, 3]);
+
+//Ejercicio 14: JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+function isValidVariable(variable) {
+    variable.includes("$") || variable.includes("_") ? console.log("The variable is not valid") : console.log('The variable is valid');
+}
+isValidVariable("asfdc");
+isValidVariable("asfdc_");
+
+//Ejercicio 15: Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+function randomNumbers() {
+    let arr = [];
+    for (let index = 1; arr.length <= 7; index++) {
+        let random = Math.floor(Math.random() * 10);
+        arr.push(random);
+    }
+    const newArr = new Set(arr);
+    console.log(newArr)
+}
+randomNumbers();
+
+//Ejercicio 16: Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
+import * as world from "./Arrays/countries.js";
+function reverseArrayCountries() {
+    const newArrOfCountries = [...world.countries];
+    newArrOfCountries.reverse();
+    console.log(newArrOfCountries);
+}
+reverseArrayCountries();
