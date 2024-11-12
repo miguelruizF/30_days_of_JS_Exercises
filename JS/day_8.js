@@ -1,3 +1,4 @@
+import {users} from "./objects/objects.js";
 //----------- OBJECTS ---------------
 //------------ LEVEL 1 ----------------
 
@@ -28,3 +29,21 @@
     }
     console.log(dog.getDogInfo());
 
+//------------ LEVEL 2 ----------------
+    //2.1: Find the person who has many skills in the users object.
+    const usersSkills = {...users}
+    const numMax = [];
+    for(let clave in usersSkills){
+        numMax.push(usersSkills[clave].skills.length)
+    }
+    let maximo = Math.max(...numMax);
+    let userMaxSkill;
+
+    Object.entries(usersSkills).forEach(user => {
+        if(user[1].skills.length === maximo){
+            userMaxSkill = user
+        }
+    })
+    console.log(userMaxSkill)
+    
+    //2.2: Count logged in users, count users having greater than equal to 50 points from the following object.
