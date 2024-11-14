@@ -47,3 +47,19 @@ import {users} from "./objects/objects.js";
     console.log(userMaxSkill)
     
     //2.2: Count logged in users, count users having greater than equal to 50 points from the following object.
+    const usersAreLogged = [];
+    Object.entries(usersSkills).forEach(user => {
+        if(user[1].isLoggedIn === true && user[1].points >= 50){
+            usersAreLogged.push(user);
+        }
+    })
+    console.log(usersAreLogged);
+
+    //2.3: Find people who are MERN stack developer from the users object
+    const usersAreMernDeveloper = []
+    Object.entries(usersSkills).forEach(user => {
+        if(user[1].skills.includes("MongoDB")){
+            usersAreMernDeveloper.push(user);
+        }
+    })
+    console.log(usersAreMernDeveloper);
