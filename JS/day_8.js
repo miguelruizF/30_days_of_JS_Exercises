@@ -1,4 +1,5 @@
 import {users} from "./objects/objects.js";
+import {countries} from "./objects/countries.js";
 //----------- OBJECTS ---------------
 //------------ LEVEL 1 ----------------
 
@@ -63,3 +64,18 @@ import {users} from "./objects/objects.js";
         }
     })
     console.log(usersAreMernDeveloper);
+
+    //2.4: Set your name in the users object without modifying the original users object
+    usersSkills.Miguel = {};
+    console.log(usersSkills);
+
+    //2.5: Get all keys or properties of users object
+    console.log(Object.keys(usersSkills));
+    
+    //2.6: Get all the values of users object
+    console.log(Object.values(usersSkills));
+
+    //2.7: Use the countries object to print a country name, capital, populations and languages.
+    for(let city in countries){
+        console.log(`City: ${countries[city].name} \nCapital: ${countries[city].capital} \nPopulations: ${countries[city].population} \nLanguages: ${countries[city].languages}`)
+    }
