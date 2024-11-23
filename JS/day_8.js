@@ -1,5 +1,6 @@
-import {users} from "./objects/objects.js";
+// import {users} from "./objects/objects.js";
 import {countries} from "./objects/countries.js";
+import { users } from "./objects/usersObj.js";
 //----------- OBJECTS ---------------
 //------------ LEVEL 1 ----------------
 
@@ -31,7 +32,7 @@ import {countries} from "./objects/countries.js";
     console.log(dog.getDogInfo());
 
 //------------ LEVEL 2 ----------------
-    //2.1: Find the person who has many skills in the users object.
+   /*  //2.1: Find the person who has many skills in the users object.
     const usersSkills = {...users}
     const numMax = [];
     for(let clave in usersSkills){
@@ -79,3 +80,96 @@ import {countries} from "./objects/countries.js";
     for(let city in countries){
         console.log(`City: ${countries[city].name} \nCapital: ${countries[city].capital} \nPopulations: ${countries[city].population} \nLanguages: ${countries[city].languages}`)
     }
+ */
+//------------ LEVEL 3 ----------------
+    //3.1: Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+    const personAccount = {
+        firstName: "John",  // Example first name
+        lastName: "Doe",    // Example last name
+        incomes: [
+            { description: "Salary", amount: 5000 },
+            { description: "Freelance", amount: 1500 }
+        ],
+        expenses: [
+            { description: "Rent", amount: 1200 },
+            { description: "Groceries", amount: 300 },
+            { description: "Utilities", amount: 150 }
+        ],
+    
+        // Method to calculate total income
+        totalIncome: function() {
+            return this.incomes.reduce((total, income) => total + income.amount, 0);
+        },
+    
+        // Method to calculate total expenses
+        totalExpense: function() {
+            return this.expenses.reduce((total, expense) => total + expense.amount, 0);
+        },
+    
+        // Method to return account info (name + totals)
+        accountInfo: function() {
+            return `${this.firstName} ${this.lastName} has a total income of $${this.totalIncome()} and total expenses of $${this.totalExpense()}.`;
+        },
+    
+        // Method to add an income
+        addIncome: function(description, amount) {
+            this.incomes.push({ description, amount });
+        },
+    
+        // Method to add an expense
+        addExpense: function(description, amount) {
+            this.expenses.push({ description, amount });
+        },
+    
+        // Method to calculate account balance (income - expenses)
+        accountBalance: function() {
+            return this.totalIncome() - this.totalExpense();
+        }
+    };
+    
+    //3.2: a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
+        // b. Create a function called signIn which allows user to sign in to the application
+    const objUsers = [...users];
+    function signUp(username, email, password) {
+        const userExist = objUsers.some(user => user.email === email);
+        if(!userExist){
+            const newUser = {
+                _id: userID(),
+                username,
+                email,
+                password,
+                createdAt: new Date().toLocaleString(),
+                isLoggedIn: false
+            }
+            objUsers.push(newUser);
+            console.log('Sign up successful! Welcome, ' + username);
+        }else{
+            console.log('the user has already an account');
+        }
+    }
+    function userID() {
+        let newArray = [];
+        for (let i = 1; i <= 6; i++) {
+            let abecedario = "0123456789abcdefghijklmnopqrstuvwxyz";
+            let indexRandom = Math.floor(Math.random() * abecedario.length);
+            newArray.push(abecedario[indexRandom]);
+        }
+        return newArray.join('');
+    }
+    
+    signUp('John Doe', 'john.doe@example.com', 'password123');
+    console.log(objUsers);
+    // signUp('John Doe', 'john.doe@example.com', 'anotherPassword123'); 
+    // console.log(users);
+
+    function signIn(email, password) {
+        const userExist = objUsers.some(user => user.email === email);
+        const passwordExist = objUsers.some(user => user.password === password);
+
+        if(userExist && passwordExist){
+            console.log('Welcome')
+        }else{
+            console.log('Username or password are incorrect!!!')
+        }
+    }
+    signIn('john.doe@example.com', 'password123');
