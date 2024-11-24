@@ -1,6 +1,6 @@
 // import {users} from "./objects/objects.js";
 import {countries} from "./objects/countries.js";
-import { users } from "./objects/usersObj.js";
+import { products, users } from "./objects/usersObj.js";
 //----------- OBJECTS ---------------
 //------------ LEVEL 1 ----------------
 
@@ -173,3 +173,35 @@ import { users } from "./objects/usersObj.js";
         }
     }
     signIn('john.doe@example.com', 'password123');
+
+    //3.3: The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product
+    function averageRating(product) {
+        const ratings = product.ratings;
+        if(ratings.length === 0){
+            return 'No ratings yet';
+        }
+        const totalRatings = ratings.reduce((sum, rating) => sum + rating.rate, 0);
+        const averageRating = totalRatings / ratings.length;
+
+        return averageRating.toFixed(2)
+    }
+
+    const ratedProducts = products.map(product => ({
+        ...product,
+        averageRating: averageRating(product)
+    }));
+
+    console.log(ratedProducts);
+
+    //3.4: Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+    function likeProduct(product) {
+        const likes = product.likes;
+        if(likes.length === 0){
+            return 'No likes yet';
+        }
+    }
+    const likedProducts = products.map(product => ({
+        ...product,
+        likeProduct: likeProduct(product)
+    }))
+    console.log(likedProducts)
