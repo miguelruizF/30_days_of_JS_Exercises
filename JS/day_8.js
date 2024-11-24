@@ -194,14 +194,17 @@ import { products, users } from "./objects/usersObj.js";
     console.log(ratedProducts);
 
     //3.4: Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
-    function likeProduct(product) {
-        const likes = product.likes;
-        if(likes.length === 0){
-            return 'No likes yet';
+    function likeProduct(product, userId) {
+        const index = product.likes.indexOf(userId);
+        if(index === -1){
+            product.likes.push(userId);
+            console.log(`${userId} liked the product: ${product.name}`);
+        }else{
+            product.likes.splice(index, 1);
+            console.log(`${userId} removed their like from the product: ${product.name}`);
         }
+        return product;
     }
-    const likedProducts = products.map(product => ({
-        ...product,
-        likeProduct: likeProduct(product)
-    }))
-    console.log(likedProducts)
+    let updateProduct = likeProduct(products[0], 'fg12cy');
+    // updateProduct = likeProduct(products[0], 'fg12cy');
+    console.log(updateProduct);
