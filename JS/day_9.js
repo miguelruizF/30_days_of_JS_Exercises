@@ -43,3 +43,33 @@ console.log(nameToUppercase);
 const productsToMap = products.map(product => `${product.product} = $${product.price}`);
 console.log(productsToMap);
 
+//Ejercicio 11: Use filter to filter out countries containing land.
+const countriesWithLand = countries.filter(country => country.includes('land'));
+console.log(countriesWithLand);
+
+//Ejercicio 12: Use filter to filter out countries having six character.
+const countriesSixLength = countries.filter(country => country.length == 6);
+console.log(countriesSixLength);
+
+//Ejercicio 13: Use filter to filter out countries containing six letters and more in the country array.
+const countriesMoreLength = countries.filter(country => country.length >= 6);
+console.log(countriesMoreLength);
+
+//Ejercicio 14: Use filter to filter out country start with 'E';
+const countriesWithE = countries.filter(country => country.startsWith('E'));
+console.log(countriesWithE);
+
+//Ejercicio 15: Use filter to filter out only prices with values.
+const onlyPrices = products.filter(product => product.price > 0);
+console.log(onlyPrices);
+
+//Ejercicio 16: Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+function getStringLists(arr) {
+    const newArr = arr.filter(item => typeof(item) === 'string')
+    return newArr;
+}
+console.log(getStringLists(['Asabeneh', 'Mathias', 8, 'Brook']));
+
+//Ejercicio 17: Use reduce to sum all the numbers in the numbers array.
+const sumWithReduce = numbers.reduce((acc, curr) => acc + curr)
+console.log(sumWithReduce);
