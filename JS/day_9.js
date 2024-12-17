@@ -73,3 +73,13 @@ console.log(getStringLists(['Asabeneh', 'Mathias', 8, 'Brook']));
 //Ejercicio 17: Use reduce to sum all the numbers in the numbers array.
 const sumWithReduce = numbers.reduce((acc, curr) => acc + curr)
 console.log(sumWithReduce);
+
+//Ejercicio 18: Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+const concatenateCountries = countries.reduce((acc, country) => {
+    return acc += `, ${country}`
+});
+console.log(concatenateCountries, "are north European countries");
+
+//Ejercicio 19: Explain the difference between some and every
+/* Some: Este metodo retorna true si al menos un item cumple con la condicion.
+Every: Este metodo devuelve true si todos los items cumplen con la condicion, si uno no la cumple, retornara false. */
