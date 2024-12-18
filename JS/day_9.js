@@ -83,3 +83,31 @@ console.log(concatenateCountries, "are north European countries");
 //Ejercicio 19: Explain the difference between some and every
 /* Some: Este metodo retorna true si al menos un item cumple con la condicion.
 Every: Este metodo devuelve true si todos los items cumplen con la condicion, si uno no la cumple, retornara false. */
+
+//Ejercicio 20: Use some to check if some names' length greater than seven in names array
+const checkLength = names.some(name => name.length > 7);
+console.log(checkLength);
+
+//Ejercicio 21: Use every to check if all the countries contain the word land
+const containAll = countries.every(country => country.includes('land'));
+console.log(containAll);
+
+//Ejercicio 22: Explain the difference between find and findIndex.
+/* find: retorna el primer elemento que cumpla con la condicion
+findIndex: retorna la primer posicion del primer elemento que cumpla con la condicion */
+
+//Ejercicio 23: Use find to find the first country containing only six letters in the countries array
+const findCountry = countries.find(country => country.length === 6);
+console.log(findCountry);
+
+//Ejercicio 24: Use findIndex to find the position of the first country containing only six letters in the countries array
+const findIndexCountry = countries.findIndex(country => country.length === 6);
+console.log(findIndexCountry);
+
+//Ejercicio 25: Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+const findNorway = countries.findIndex(country => country === 'Norway');
+console.log(findNorway);
+
+//Ejercicio 26: Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const findRussia = countries.findIndex(country => country === 'Russia');
+console.log(findRussia);
