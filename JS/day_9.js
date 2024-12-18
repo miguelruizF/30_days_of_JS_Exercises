@@ -111,3 +111,12 @@ console.log(findNorway);
 //Ejercicio 26: Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
 const findRussia = countries.findIndex(country => country === 'Russia');
 console.log(findRussia);
+
+
+//------------ LEVEL 2 ----------------
+
+//Ejercicio 1: Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+const totalPrice = products.map(product => typeof(product.price) !== 'number' ? 0 : product.price).reduce((acc, curr) => acc + curr);
+console.log(totalPrice);
+
+//Ejercicio 2: Find the sum of price of products using only reduce reduce(callback))
