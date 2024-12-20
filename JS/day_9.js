@@ -120,3 +120,19 @@ const totalPrice = products.map(product => typeof(product.price) !== 'number' ? 
 console.log(totalPrice);
 
 //Ejercicio 2: Find the sum of price of products using only reduce reduce(callback))
+const sumOfPrice = products.reduce((acc, curr) => {
+    return acc += typeof(curr.price) !== 'number' ? 0 : curr.price;
+},0)
+console.log(sumOfPrice);
+
+//Ejercicio 3: Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+const categorizeCountries = countries.filter(country => country.includes('land'));
+console.log(categorizeCountries);
+
+//Ejercicio 4: Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+const letterCount = countries.map(country => {
+    const letter = country[0];
+    const count = country.split('').filter(c => c === letter).length;
+    return {letter, count};
+});
+console.log(letterCount);   
