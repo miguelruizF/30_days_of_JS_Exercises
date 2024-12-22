@@ -131,8 +131,29 @@ console.log(categorizeCountries);
 
 //Ejercicio 4: Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 const letterCount = countries.map(country => {
-    const letter = country[0];
-    const count = country.split('').filter(c => c === letter).length;
+    const letter = country[0].toLowerCase();
+    const count = country.toLowerCase().split('').filter(c => c === letter).length;
     return {letter, count};
 });
-console.log(letterCount);   
+console.log(letterCount);
+
+//Ejercicio 5: Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+const getFirstTenCountries = countries.map(country => country).slice(0, 10);
+console.log(getFirstTenCountries);
+
+//Ejercicio 6: Declare a getLastTenCountries function which returns the last ten countries in the countries array.
+const getLastTenCountries = countries.map(country => country).slice(-10);
+console.log(getLastTenCountries);
+
+//Ejercicio 7: Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+const mostUsedLetter = countries.map(country => country[0].toLowerCase()).reduce((acc, curr) => {
+    if(acc[curr]) {
+        acc[curr]++;
+    } else {
+        acc[curr] = 1;
+    }
+    return acc;
+}, {});
+console.log(mostUsedLetter);
+
+//------------ LEVEL 3 ----------------
