@@ -2,6 +2,7 @@ import { countries } from "./Arrays/arraysDay9.js";
 import { names } from "./Arrays/arraysDay9.js";
 import { numbers } from "./Arrays/arraysDay9.js";
 import { products } from "./Arrays/arraysDay9.js";
+import { data_countries } from "./Arrays/countries_data.js";
 
 //----------- Higher Order Functions ---------------
 //------------ LEVEL 1 ----------------
@@ -156,4 +157,164 @@ const mostUsedLetter = countries.map(country => country[0].toLowerCase()).reduce
 }, {});
 console.log(mostUsedLetter);
 
+
 //------------ LEVEL 3 ----------------
+
+//Ejercicio 1: Use the countries information, in the data folder. Sort countries by name, by capital, by population
+const sortByName = data_countries.sort((a, b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+})
+console.log(sortByName);
+
+const sortByCapital = data_countries.sort((a, b) => {
+    if (a.capital < b.capital) return -1
+    if (a.capital > b.capital) return 1
+    return 0
+})
+console.log(sortByCapital);
+
+const sortByPopulation = data_countries.sort((a, b) => {
+    if (a.population < b.population) return -1
+    if (a.population > b.population) return 1
+    return 0
+})
+console.log(sortByPopulation);
+
+//Ejercicio 2: Find the 10 most spoken languages:
+/* // Your output should look like this
+console.log(mostSpokenLanguages(countries, 10))
+[
+{country: 'English',count:91},
+{country: 'French',count:45},
+{country: 'Arabic',count:25},
+{country: 'Spanish',count:24},
+{country:'Russian',count:9},
+{country:'Portuguese', count:9},
+{country:'Dutch',count:8},
+{country:'German',count:7},
+{country:'Chinese',count:5},
+{country:'Swahili',count:4}
+]
+
+// Your output should look like this
+console.log(mostSpokenLanguages(countries, 3))
+[
+{country: 'English',count: 91},
+{country: 'French',count: 45},
+{country: 'Arabic',count: 25},
+]``` */
+// PRIMERA OPCION
+const mostSpokenLanguages = data_countries.map(country => country.languages).flat().reduce((acc, curr) => {
+    if(acc[curr]) {
+        acc[curr]++;
+    } else {
+        acc[curr] = 1;
+    }
+    return acc;
+}, {});
+const ocurrencesArray = Object.entries(mostSpokenLanguages).map(([country, count]) => ({country, count}));
+console.log(ocurrencesArray.sort((a, b) => b.count - a.count).slice(0, 10));
+
+// SEGUNDA OPCION
+/* const mostSpokenLanguages = Object.entries(
+    data_countries.map(country => country.languages).flat().reduce((acc, curr) => {
+        if (acc[curr]) {
+            acc[curr]++;
+        } else {
+            acc[curr] = 1;
+        }
+        return acc;
+        }, {})
+    )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([language, count]) => ({ language, count }));
+
+console.log(mostSpokenLanguages); */
+
+//Ejercicio 3: Use countries_data.js file create a function which create the ten most populated countries
+const mostPopulatedCountries = data_countries.map(country => {
+    return {country: country.name, population: country.population}
+}).sort((a, b) => b.population - a.population).slice(0, 10);
+console.log(mostPopulatedCountries);
+
+//Ejercicio 4: Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+const statistics = {
+    count: function() {
+        return ages.length;
+    },
+    sum: function() {
+        return ages.reduce((acc, curr) => acc + curr);
+    },
+    min: function() {
+        return Math.min(...ages);
+    },
+    max: function() {
+        return Math.max(...ages);
+    },
+    range: function() {
+        return this.max() - this.min();
+    },
+    mean: function() {
+        return this.sum() / this.count();
+    },
+    median: function() {
+        ages.sort((a, b) => a - b);
+        const mid = Math.floor(ages.length / 2);
+        return ages.length % 2 !== 0 ? ages[mid] : (ages[mid - 1] + ages[mid]) / 2;
+    },
+    mode: function() {
+        const mode = ages.reduce((acc, curr) => {
+            if(acc[curr]) {
+                acc[curr]++;
+            } else {
+                acc[curr] = 1;
+            }
+            return acc;
+        }, {});
+        const max = Math.max(...Object.values(mode));
+        return Object.entries(mode).filter(([key, value]) => value === max).map(([key, value]) => key);
+    },
+    variance: function() {
+        const mean = this.mean();
+        return ages.reduce((acc, curr) => acc + Math.pow(curr - mean, 2), 0) / this.count();
+    },
+    standardDeviation: function() {
+        return Math.sqrt(this.variance());
+    },
+    percentile: function(percentile) {
+        const index = Math.floor((percentile / 100) * ages.length);
+        ages.sort((a, b) => a - b);
+        return ages[index];
+    },
+    frequencyDistribution: function() {
+        return ages.reduce((acc, curr) => {
+            if(acc[curr]) {
+                acc[curr]++;
+            } else {
+                acc[curr] = 1;
+            }
+            return acc;
+        }, {});
+    },
+    describe: function() {
+        return {
+            count: this.count(),
+            sum: this.sum(),
+            min: this.min(),
+            max: this.max(),
+            range: this.range(),
+            mean: this.mean(),
+            median: this.median(),
+            mode: this.mode(),
+            variance: this.variance(),
+            standardDeviation: this.standardDeviation(),
+            percentile: this.percentile(90),
+            frequencyDistribution: this.frequencyDistribution()
+        }
+    }
+}
+console.log(statistics.describe());
