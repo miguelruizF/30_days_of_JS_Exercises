@@ -56,3 +56,24 @@ console.log(differenceSet);
 
 
 //------------ LEVEL 3 ----------------
+//Ejercicio 1: How many languages are there in the countries object file.
+const languages = new Set();
+data_countries.forEach(country => country.languages.forEach(language => languages.add(language)));
+console.log(languages.size);
+// console.log(languages);
+
+//Ejercicio 2: Use the countries data to find the 10 most spoken languages
+const languagesArray = Array.from(languages);
+const languagesCount = new Map();
+languagesArray.forEach(language => {
+    let count = 0;
+    data_countries.forEach(country => {
+        if (country.languages.includes(language)) {
+            count++;
+        }
+    });
+    languagesCount.set(language, count);
+});
+const sortedLanguages = new Map([...languagesCount.entries()].sort((a, b) => b[1] - a[1]));
+console.log(sortedLanguages);
+// console.log(languagesArray);
