@@ -1,3 +1,4 @@
+import { data_countries } from './Arrays/countries_data.js';
 //----------- SET and Map ---------------
 //------------ LEVEL 1 ----------------
 
@@ -38,3 +39,20 @@ const mapCountries = new Map();
 // cities.forEach(country => mapCountries.set(country, country.length));
 countries.forEach(country => mapCountries.set(country, country.length));
 console.log(mapCountries);
+
+
+//------------ LEVEL 2 ----------------
+//Ejercicio 1: Find a union b
+const unionSet = new Set([...a, ...b]);
+console.log(unionSet);
+
+//Ejercicio 2: Find a intersection b
+const intersectionSet = new Set(a.filter(num => b.includes(num)));
+console.log(intersectionSet);
+
+//Ejercicio 3: Find a with b
+const differenceSet = new Set(a.filter(num => !b.includes(num)));   
+console.log(differenceSet);
+
+
+//------------ LEVEL 3 ----------------
