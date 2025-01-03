@@ -144,4 +144,7 @@ function findMax() {
     //console.log(numbers);
     console.log(`El numero mayor es: ${numMax[2]}`);
 }
-findMax(88600,6366,890);
+findMax(800,6366,890);
+
+//--------------- Level 2 --------------------
+//Ejercicio 1: Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
