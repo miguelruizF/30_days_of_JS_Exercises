@@ -1,4 +1,4 @@
-import { constants } from "./Arrays/dataDay10.js";
+import { constants, users } from "./Arrays/dataDay10.js";
 import { countries } from "./Arrays/dataDay10.js";
 import { rectangle } from "./Arrays/dataDay10.js";
 
@@ -20,3 +20,7 @@ console.log(width, height, area, perimeter);
 
 
 //------------ LEVEL 2 ----------------
+//Ejercicio 1: Iterate through the users array and get all the keys of the object using destructuring
+for(const { name, scores, skills, age } of users){
+    console.log(name, scores, skills, age);
+}
