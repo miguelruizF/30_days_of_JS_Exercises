@@ -24,3 +24,13 @@ console.log(width, height, area, perimeter);
 for(const { name, scores, skills, age } of users){
     console.log(name, scores, skills, age);
 }
+
+//Ejercicio 2: Find the persons who have less than two skills
+for(const [key, value] of Object.entries(users)){
+    if(value.skills.length < 2){
+        console.log(value);
+    }
+}
+
+
+//------------ LEVEL 3 ----------------
