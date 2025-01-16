@@ -67,3 +67,55 @@ convertArrayToObject(students);
 Add Express with level 9 to the back end skill sets
 Add SQL with level 8 to the data base skill sets
 Add SQL without level to the data science skill sets */
+const studentObj = {
+    name: 'David',
+    age: 25,
+    skills: {
+        frontEnd: [
+            { skill: 'HTML', level: 10 },
+            { skill: 'CSS', level: 8 },
+            { skill: 'JS', level: 8 },
+            { skill: 'React', level: 9 }
+        ],
+        backEnd: [
+            { skill: 'Node',level: 7 },
+            { skill: 'GraphQL', level: 8 },
+        ],
+        dataBase:[
+            { skill: 'MongoDB', level: 7.5 },
+        ],
+        dataScience:['Python', 'R', 'D3.js']
+    }
+}
+function addSkills(obj, front, back, base, science){
+    const newStudent = JSON.parse(JSON.stringify(obj)); //Clonacion profunda
+    const { name, age, skills } = newStudent;
+    skills['frontEnd'].push(front);
+    skills['backEnd'].push(back);
+    skills['dataBase'].push(base);
+    skills['dataScience'].push(science);
+    console.log(newStudent);
+}
+addSkills(studentObj,{skill: 'Bootstrap', level: 8},{skill: 'Express', level: 9},{skill: 'SQL', level: 8},'SQL');
+
+console.log(studentObj);
+/**
+ * {...obj} -> Clonacion superficial
+ * skills: {frontEnd: [...obj.skills.frontEnd]} clonacion profunda
+ */
+/* function addSkills(obj, front, back, base, science) {
+    const newStudent = {
+        ...obj,
+        skills: {
+            frontEnd: [...obj.skills.frontEnd],
+            backEnd: [...obj.skills.backEnd],
+            dataBase: [...obj.skills.dataBase],
+            dataScience: [...obj.skills.dataScience]
+        }
+    };
+    newStudent.skills.frontEnd.push(front);
+    newStudent.skills.backEnd.push(back);
+    newStudent.skills.dataBase.push(base);
+    newStudent.skills.dataScience.push(science);
+    console.log(newStudent);
+} */
