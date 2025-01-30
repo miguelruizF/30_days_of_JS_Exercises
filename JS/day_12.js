@@ -47,3 +47,27 @@ const tenMostFrequentWords = (parameter) => {
     console.log(ocurrencesArray.slice(0, 10)); //mostrar las 10 primeras palabras
 }
 tenMostFrequentWords(paragraph);
+
+
+//------------ LEVEL 3 ----------------
+//Ejercicio 1: Write a function which cleans text. Clean the following text. After cleaning, count three most frequent words in the string.
+const sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`
+function cleanAndCount(parameter, mostFrequent){
+    const regExp5 = /[^\w\s]/gi;
+    const regExp6 = /\w+/gi;
+    const sentenceExtract = sentence.replace(regExp5, '').match(regExp6);
+    const arrOcurrences = [];
+    sentenceExtract.forEach( word => {
+        let count = 0;
+        arrOcurrences.push({ word, count });
+        sentenceExtract.forEach( word2 => {
+            if(word === word2){
+                count++;
+                arrOcurrences.find( p => p.word === word ).count = count;
+            }
+        } );
+    } );
+    let result = arrOcurrences.sort( (a, b) => b.count - a.count ).slice( 0, mostFrequent );
+    console.log(result);
+}
+cleanAndCount(sentence, 3);
