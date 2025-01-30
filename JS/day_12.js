@@ -46,4 +46,4 @@ const tenMostFrequentWords = (parameter) => {
     ocurrencesArray.sort((a, b) => b.wordCount - a.wordCount); //ordenar array de mayor a menor
     console.log(ocurrencesArray.slice(0, 10)); //mostrar las 10 primeras palabras
 }
-tenMostFrequentWords(paragraph);
+tenMostFrequentWords(paragraph);    
