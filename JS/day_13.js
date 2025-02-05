@@ -23,3 +23,33 @@ console.warn("This is a message in a console warn");
 
 //Ejercicio 3: Write an error message using console.error()
 console.error('This is a message in a console error');
+
+
+//------------ LEVEL 3 ----------------
+//Ejercicio 1: Check the speed difference among the following loops: while, for, for of, forEach
+console.time('Loop with while');
+let i;
+while(i < 10 ){
+    // console.log(i)
+    i++
+}
+console.timeEnd('Loop with while');
+
+console.time('Loop with for');
+for (let index = 0; index < 10; index++) {
+    // console.log(index)
+}
+console.timeEnd('Loop with for');
+
+console.time('Loop with for of');
+let arr = [ 1,2,3,4,5,6,7,8,9,10]
+for (const i of arr) {
+    
+}
+console.timeEnd('Loop with for of');
+
+console.time('loop with foreach');
+arr.forEach(i => {
+    
+});
+console.timeEnd('loop with foreach');
