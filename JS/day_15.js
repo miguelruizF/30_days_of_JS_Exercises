@@ -33,3 +33,21 @@ const gato = new Animal('Michi', 5, 'blanco', 4);
 console.log(gato);
 console.log(gato.informacion());
 console.log(gato.typeOfAnimal('mamifero'));
+
+
+//------------ LEVEL 2 ----------------
+
+//Ejercicio 1: Override the method you create in Animal class
+class Perro extends Animal{
+    constructor(name, age, color, legs, breed){
+        super(name, age, color, legs)
+        this.breed = breed
+    }
+    moreInfo(){
+        console.log(`y soy ${this.breed}`)
+    }
+}
+const chihuahua = new Perro('Otso', 5, 'cafe', 4, 'pequeña');
+console.log(chihuahua);
+console.log(chihuahua.informacion());
+chihuahua.moreInfo();
