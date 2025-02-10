@@ -59,13 +59,19 @@ chihuahua.moreInfo();
 const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 class Statistics {
     constructor(arr){
-        this.arr = arr
+        this.arr = [...arr]
     }
     
-    get describe(){
+    describe(){
         return {
             Count: this.count(),
-            Sum: this.sum()
+            Sum: this.sum(),
+            Min: this.min(),
+            Max: this.max(),
+            Range: this.range(),
+            Mean: this.mean(),
+            Median: this.median(),
+            Mode: this.mode()
         }
     }
 
@@ -80,6 +86,40 @@ class Statistics {
         });
         return sum;
     }
+    min(){
+        const min = Math.min(...this.arr);
+        return min;
+    }
+    max(){
+        const max = Math.max(...this.arr);
+        return max;
+    }
+    range(){
+        return this.max() - this.min();
+    }
+    mean(){
+        return this.sum() / this.count();
+    }
+    median(){
+        this.arr.sort((a,b) => a-b);
+        const median = Math.floor(this.arr.length / 2);
+        return ages.length % 2 !== 0 ? this.arr[median] : (this.arr[median - 1] + this.arr[median]) / 2;
+    }
+    mode(){
+        // const ages = [...this.arr]
+        const mode = this.arr.reduce((acc, curr) => {
+            if(acc[curr]){
+                acc[curr]++;
+            } else {
+                acc[curr] = 1;
+            }
+            return acc;
+        },{});
+        const max = Math.max(...Object.values(mode));
+        const key = Object.entries(mode).filter(([key, value]) => value === max)[0][0];
+        const value = Object.entries(mode).filter(([key, value]) => value === max)[0][1];
+        return { mode: key, count: value };
+    }
 }
 const descripcion = new Statistics(ages);
-console.log(descripcion.describe)
+console.log(descripcion.describe())
