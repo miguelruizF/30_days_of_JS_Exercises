@@ -71,7 +71,10 @@ class Statistics {
             Range: this.range(),
             Mean: this.mean(),
             Median: this.median(),
-            Mode: this.mode()
+            Mode: this.mode(),
+            Variance: this.variance(),
+            'Standard Desviation': this.std(),
+            'Frequency Distribution': this.frequencyD()
         }
     }
 
@@ -119,6 +122,23 @@ class Statistics {
         const key = Object.entries(mode).filter(([key, value]) => value === max)[0][0];
         const value = Object.entries(mode).filter(([key, value]) => value === max)[0][1];
         return { mode: key, count: value };
+    }
+    variance(){
+        const mean = this.mean();
+        return this.arr.reduce((acc, curr) => acc + Math.pow(curr - mean, 2), 0) / this.count();
+    }
+    std(){
+        return Math.sqrt(this.variance());
+    }
+    frequencyD(){
+        return this.arr.reduce((acc, curr) => {
+            if(acc[curr]){
+                acc[curr]++;
+            } else {
+                acc[curr] = 1;
+            }
+            return acc;
+        }, {});
     }
 }
 const descripcion = new Statistics(ages);

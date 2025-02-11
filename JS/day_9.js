@@ -297,7 +297,7 @@ const statistics = {
             } else {
                 acc[curr] = 1;
             }
-            return acc;
+            return acc; 
         }, {});
     },
     describe: function() {
