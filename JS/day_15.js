@@ -143,3 +143,41 @@ class Statistics {
 }
 const descripcion = new Statistics(ages);
 console.log(descripcion.describe())
+
+
+//Ejercicio 2: Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
+class PersonAccount{
+    constructor(firstname, lastname, incomes, expenses){
+        this.firstname = firstname
+        this.lastname = lastname
+        this.incomes = incomes
+        this.expenses = expenses
+    }
+    totalIncome(){
+        return this.incomes.reduce((acc, curr) => acc + curr, 0);
+    }
+    totalExpense(){
+        return this.expenses.reduce((acc, curr) => acc + curr, 0);
+    }
+    accountInfo(){
+        return {
+            firstname: this.firstname,
+            lastname: this.lastname,
+            incomes: this.incomes,
+            expenses: this.expenses
+        }
+    }
+    addIncome(income){
+        this.incomes.push(income);
+    }
+    addExpense(expense){
+        this.expenses.push(expense);
+    }
+    accountBalance(){
+        return this.totalIncome() - this.totalExpense();
+    }
+}
+const personFirst = new PersonAccount('Juan', 'Perez', [1000, 2000, 3000], [500, 1000, 1500]);
+console.log(personFirst);
+console.log(personFirst.totalIncome());
+console.log(personFirst.accountInfo());
