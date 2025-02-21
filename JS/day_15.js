@@ -142,4 +142,6 @@ class Statistics {
     }
 }
 const descripcion = new Statistics(ages);
-console.log(descripcion.describe())
+console.log(descripcion.describe());
+
+//Ejercicio 2: Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
