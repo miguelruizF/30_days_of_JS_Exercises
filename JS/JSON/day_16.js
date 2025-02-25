@@ -1,14 +1,14 @@
 export const skills = ['HTML', 'CSS', 'JS', 'React','Node', 'Python']
-let age = 250;
-let isMarried = true
-const student = {
+export let age = 250;
+export let isMarried = true
+export const student = {
     firstName:'Asabeneh',
     lastName:'Yetayehe',
     age:250,
     isMarried:true,
     skills:['HTML', 'CSS', 'JS', 'React','Node', 'Python', ]
 }
-const txt = `{
+export const txt = `{
     "Alex": {
         "email": "alex@alex.com",
         "skills": [
