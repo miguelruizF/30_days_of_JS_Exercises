@@ -17,3 +17,9 @@ console.log(isMarriedChanged);
 //Ejercicio 4: Stringify the student object
 const studentChanged = JSON.stringify(student, undefined, 2);
 console.log(studentChanged);
+
+
+//------------ LEVEL 2 ----------------
+//Ejercicio 1: Stringify the students object with only firstName, lastName and skills properties
+const studentFiltered = JSON.stringify(student, ['firstName', 'lastName', 'skills'], 2);
+console.log(studentFiltered);
