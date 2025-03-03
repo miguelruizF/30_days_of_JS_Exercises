@@ -89,3 +89,18 @@ async function countriesLargest(){
     }).sort((a,b) => b.population - a.population).slice(0, 10))
 }
 countriesLargest();
+
+//Ejercicio 3: Read the countries api and count total number of languages in the world used as officials.
+
+async function languagesWorld(){
+    let langs = [];
+    const languages = await readCountries();
+    languages.map(language => {
+        const { languages } = language
+        languages.forEach(lang => langs.push(lang.name))
+    })
+    const newLangs =  new Set(langs);
+    console.log(`Official Languages are: ${newLangs.size}`)
+    // console.log(newLangs.size)
+}
+languagesWorld();
