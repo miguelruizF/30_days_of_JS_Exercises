@@ -10,7 +10,7 @@ const readCountriesAPI = fetch(countriesAPI)
     .then(data => {
         data.forEach(element => {
             const {name, capital, languages, population, area} = element;
-            // console.log(`Country: ${name}, Capital: ${capital}, Languages: ${languages.map(language => language.name)}, Population: ${population}, Area: ${area}`);
+            console.log(`Country: ${name}, Capital: ${capital}, Languages: ${languages.map(language => language.name)}, Population: ${population}, Area: ${area}`);
         });
     })
     .catch(error => console.log(error));
@@ -38,3 +38,22 @@ readCatsAPI();
 
 //------------ LEVEL 3 ----------------
 //Ejercicio 1: Read the cats api and find the average weight of cat in metric unit.
+const averageCats = async () => {
+    // let catNames = [];
+    let regExp = /\D/gi;
+    try {
+        const response = await fetch(catsAPI)
+        const data = await response.json()
+        data.forEach( cat => {
+            const { weight } = cat;
+            let metrics = weight.metric.replace(regExp, "").split("");
+            metrics.sort((a,b) => (a - b));
+            const median = Math.floor(metrics.length / 2);
+            console.log("the median is: ", metrics.length % 2 !== 0 ? metrics[median] : (metrics[median - 1] + metrics[median]) / 2);
+        } )
+    } catch (error) {
+        console.log(error);
+    }
+    // console.log(catNames);
+}
+averageCats();
