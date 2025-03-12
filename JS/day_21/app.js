@@ -30,3 +30,37 @@ allParagraphs.forEach((paragraph, index) => {
     paragraph.setAttribute('class', 'paragraph');
 });
 console.log(allParagraphs);
+
+
+//------------ LEVEL 2 ----------------
+//Ejercicio 1: Change style of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+allParagraphs.forEach((title) => {
+    title.style.color = "white";
+    title.style.background = "blue";
+    title.style.border = "10px solid #0000FF";
+    title.style.fontSize = "20px";
+    title.style.fontFamily = "Helvetica"
+});
+
+//Ejercicio 2: Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
+allParagraphs.forEach((title, id) => {
+    id % 2 === 0 ? title.style.color = "green" : title.style.color = "red";
+});
+
+//Ejercicio 3: Set text content, id and class to each paragraph
+allParagraphs.forEach( (title, index ) => {
+    title.textContent = "All Paragraph have the same text";
+    title.setAttribute("id", `par_${index + 1}`);
+    title.setAttribute('class', 'class_par');
+});
+
+
+//------------ LEVEL 3 ----------------
+/*  DOM: Mini project 1
+Develop the following application, use the following HTML elements to get started with. You will get the same code on starter folder. Apply all the styles and functionality using JavaScript only.
+
+The year color is changing every 1 second
+The date and time background color is changing every on seconds
+Completed challenge has background green
+Ongoing challenge has background yellow
+Coming challenges have background red */
