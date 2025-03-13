@@ -1,7 +1,7 @@
 //----------- DOM ---------------
 //------------ LEVEL 1 ----------------
 const d = document;
-
+/* 
 //Ejercicio 1: Create an index.html file and put four p elements as above: Get the first paragraph by using document.querySelector(tagname) and tag name
 const firstParagraph = d.querySelector('p');
 console.log(firstParagraph);
@@ -54,7 +54,7 @@ allParagraphs.forEach( (title, index ) => {
     title.setAttribute('class', 'class_par');
 });
 
-
+ */
 //------------ LEVEL 3 ----------------
 /*  DOM: Mini project 1
 Develop the following application, use the following HTML elements to get started with. You will get the same code on starter folder. Apply all the styles and functionality using JavaScript only.
@@ -64,3 +64,52 @@ The date and time background color is changing every on seconds
 Completed challenge has background green
 Ongoing challenge has background yellow
 Coming challenges have background red */
+
+const wrapper = d.querySelector('.wrapper');
+const year = d.getElementById('year');
+const date = d.getElementById('date');
+const coloresDegradado = ["#a4c739","#afce52","#bbd56b","#c6dc83","#d1e39c","#ddeab5","#e8f1ce","#f4f8e6","#81c739","#5dc739","#3ac739","#39c75c","#39c77f"];
+const apStyle = d.getElementById('ap');
+
+d.addEventListener('DOMContentLoaded', function(){
+    setInterval(() => {
+        year.style.color = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
+        changeDate();
+        if (date) {
+            date.style.backgroundColor = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
+        }
+    }, 1000);
+    // changeBgColor(year);
+});
+
+const changeDate = () => {
+    let today = new Date();
+    let hr = today.getHours();
+    let min = today.getMinutes();
+    let sec = today.getSeconds();
+    let ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>"; 
+    hr = (hr == 0) ? 12 : hr;
+    hr = (hr > 12) ? hr - 12 : hr;
+    //Add a zero in front of numbers<10
+    hr = checkTime(hr);
+    min = checkTime(min);
+    sec = checkTime(sec);
+    let clock = hr + ":" + min + ":" + sec + " " + ap;
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let curWeekDay = days[today.getDay()];
+    let curDay = today.getDate();
+    let curMonth = months[today.getMonth()];
+    let curYear = today.getFullYear();
+    let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+    let dateComplete = date + " " + clock;
+
+    d.getElementById("date").innerHTML = dateComplete;
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
