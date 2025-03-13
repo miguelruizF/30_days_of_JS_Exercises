@@ -70,6 +70,7 @@ const year = d.getElementById('year');
 const date = d.getElementById('date');
 const coloresDegradado = ["#a4c739","#afce52","#bbd56b","#c6dc83","#d1e39c","#ddeab5","#e8f1ce","#f4f8e6","#81c739","#5dc739","#3ac739","#39c75c","#39c77f"];
 const apStyle = d.getElementById('ap');
+let list = d.querySelectorAll('li');
 
 d.addEventListener('DOMContentLoaded', function(){
     setInterval(() => {
@@ -80,6 +81,9 @@ d.addEventListener('DOMContentLoaded', function(){
         }
     }, 1000);
     // changeBgColor(year);
+    // changeBGText(0, '#19e560');
+    // changeBGText(1, '#f8fa63');
+    changeBGText();
 });
 
 const changeDate = () => {
@@ -112,4 +116,16 @@ function checkTime(i) {
         i = "0" + i;
     }
     return i;
+}
+
+function changeBGText(){
+    list.forEach((li, i) => {
+        if(i > 1){
+            li.style.backgroundColor = '#ff5c5e';
+        }else if( i === 1 ){
+            li.style.backgroundColor = '#f8fa63';
+        }else{
+            li.style.backgroundColor = '#19e560'
+        }
+    });
 }
