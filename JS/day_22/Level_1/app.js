@@ -4,7 +4,7 @@ let ul_container = d.querySelector('ul');
 let li;
 
 d.addEventListener('DOMContentLoaded', () => {
-    createNumbers(1, 151)
+    createNumbers(1, 101)
 }); 
 
 function createNumbers(start, final){
