@@ -1,15 +1,22 @@
 import { asabenehChallenges2020 } from "./data/data.js";
 let d = document;
+const coloresDegradado = ["#a4c739","#afce52","#bbd56b","#c6dc83","#d1e39c","#ddeab5","#e8f1ce","#f4f8e6","#81c739","#5dc739","#3ac739","#39c75c","#39c77f"];
 let header = d.querySelector("header");
 let clockDiv = d.createElement("div");
+clockDiv.classList.add('clockClass');
+let clockClass = d.querySelector('.clockClass')
+let pContenedor = d.createElement('p');
 
 document.addEventListener("DOMContentLoaded", () => {
     let title = d.createElement("h1");
     let subtitle = d.createElement("h2");
-
+    
     // Add a title to the header
-    title.innerHTML = `${asabenehChallenges2020.challengeTitle} in <span class='year'>2020</span>`;
+    title.innerHTML = `${asabenehChallenges2020.challengeTitle} in <span class='year'>${asabenehChallenges2020.challengeYear}</span>`;
+    title.classList.add('title');
     header.appendChild(title);
+    let year = d.querySelector('.year');
+    year.style.fontSize = '4rem'
 
     // Add a subtitle to the header
     subtitle.textContent = asabenehChallenges2020.challengeSubtitle;
@@ -18,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     subtitle.style.fontWeight = "lighter";
     header.appendChild(subtitle);
 
-    // Add a clock to the header
     setInterval(() => {
-        /* year.style.color = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)]; */
-        changeDate();
+        // changeDate();
+        changeColor(year, 'color');
+        changeColor(clockClass, 'backgroundColor');
         /* if (date) {
             date.style.backgroundColor = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
         } */
@@ -48,8 +55,10 @@ const changeDate = () => {
     let curMonth = months[today.getMonth()];
     let curYear = today.getFullYear();
     let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
-    let dateComplete = date + " " + clock;
-    clockDiv.innerHTML = dateComplete;
+    let dateComplete = date + " " + clock; 
+    pContenedor.innerHTML = dateComplete;
+    // clockDiv.innerHTML = dateComplete;
+    clockDiv.appendChild(pContenedor);
     header.appendChild(clockDiv);
 }
 
@@ -58,4 +67,8 @@ function checkTime(i) {
         i = "0" + i;
     }
     return i;
+}
+
+function changeColor(elemento, attribute){
+    elemento.style[attribute] = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
 }
