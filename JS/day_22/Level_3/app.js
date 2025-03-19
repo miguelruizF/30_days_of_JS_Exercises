@@ -2,10 +2,8 @@ import { asabenehChallenges2020 } from "./data/data.js";
 let d = document;
 const coloresDegradado = ["#a4c739","#afce52","#bbd56b","#c6dc83","#d1e39c","#ddeab5","#e8f1ce","#f4f8e6","#81c739","#5dc739","#3ac739","#39c75c","#39c77f"];
 let header = d.querySelector("header");
+let wrapper = d.querySelector(".wrapper");
 let clockDiv = d.createElement("div");
-clockDiv.classList.add('clockClass');
-let clockClass = d.querySelector('.clockClass')
-let pContenedor = d.createElement('p');
 
 document.addEventListener("DOMContentLoaded", () => {
     let title = d.createElement("h1");
@@ -25,14 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
     subtitle.style.fontWeight = "lighter";
     header.appendChild(subtitle);
 
-    setInterval(() => {
-        // changeDate();
-        changeColor(year, 'color');
-        changeColor(clockClass, 'backgroundColor');
-        /* if (date) {
-            date.style.backgroundColor = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
-        } */
-    }, 1000);
+    /* setInterval(() => {
+        changeDate();
+        changeColor('.year', 'color');
+        changeColor('.clock', 'backgroundColor');
+    }, 1000); */
+    function update(){
+        changeDate();
+        changeColor('.year', 'color');
+        changeColor('.clock', 'backgroundColor');
+        requestAnimationFrame(update);
+    }
+    update();
+    // Call the listChallenge function
+    listChallenge();
 });
 
 const changeDate = () => {
@@ -56,9 +60,8 @@ const changeDate = () => {
     let curYear = today.getFullYear();
     let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
     let dateComplete = date + " " + clock; 
-    pContenedor.innerHTML = dateComplete;
-    // clockDiv.innerHTML = dateComplete;
-    clockDiv.appendChild(pContenedor);
+    clockDiv.innerHTML = dateComplete;
+    clockDiv.classList.add('clock');
     header.appendChild(clockDiv);
 }
 
@@ -69,6 +72,50 @@ function checkTime(i) {
     return i;
 }
 
-function changeColor(elemento, attribute){
+function changeColor(selector, attribute){
+    let elemento = d.querySelector(selector);
+    if(!elemento) return;
     elemento.style[attribute] = coloresDegradado[Math.floor(Math.random() * coloresDegradado.length)];
+}
+
+function listChallenge(){
+    // Create a div element with a class name of challenge-container
+    let challenge_container = d.createElement('div');
+    challenge_container.classList.add('challenge-container');
+    // Create a ul element with a class name of challenge-list and append it to the challenge-container
+    let ul_challenge = d.createElement('ul');
+    ul_challenge.classList.add('challenge-list');
+    challenge_container.appendChild(ul_challenge);
+    // Iterate through the challenges and create a li element for each challenge
+    asabenehChallenges2020.challenges.forEach(challenge => {
+        // console.log(challenge);
+        // Destructure the challenge object
+        const { name, topics, days, status, questions, projects, interviewQns, githubUrl } = challenge;
+        // Create a li element with a class name of challenge
+        let li_challenge = d.createElement('li');
+        li_challenge.classList.add('challenge');
+        // Create a p element
+        let p_title = d.createElement('p');
+        p_title.textContent = name;
+
+        let details = d.createElement('details');
+        let summary = d.createElement('summary');
+        summary.textContent = topics[0];
+        for(let topic of topics){
+            let p_summary = d.createElement('p');
+            p_summary.textContent = topic;
+            details.appendChild(p_summary);
+        }
+        details.appendChild(summary);
+
+        let p_status = d.createElement('p');
+        p_status.textContent = status;
+        // Append the p element to the div element and the next container
+        li_challenge.appendChild(p_title);
+        li_challenge.appendChild(details);
+        li_challenge.appendChild(p_status);
+        ul_challenge.appendChild(li_challenge);
+    });
+    // Append the challenge container to the wrapper
+    wrapper.appendChild(challenge_container);
 }
