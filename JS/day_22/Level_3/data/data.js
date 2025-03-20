@@ -74,7 +74,7 @@ export const asabenehChallenges2020 = {
             },
             {
             social: 'DEV.to',
-            fontawesomeIcon: '',
+            fontawesomeIcon: '<i class="fa-solid fa-globe"></i>',
             url: 'https://dev.to/asabeneh'
             }
         ],

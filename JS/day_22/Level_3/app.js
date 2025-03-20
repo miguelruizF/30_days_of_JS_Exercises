@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     update();
     // Call the listChallenge function
     listChallenge();
+    infoUser();
 });
 
 const changeDate = () => {
@@ -119,3 +120,42 @@ function listChallenge(){
     // Append the challenge container to the wrapper
     wrapper.appendChild(challenge_container);
 }
+
+function infoUser(){
+    let {firstName, lastName, titles, qualifications, socialLinks, skills, bio} = asabenehChallenges2020.author;
+    //creating div for information
+    let divInfo = d.createElement('div');
+    divInfo.classList.add('div_information');
+    //Add name
+    let paragraphName = d.createElement('h3');
+    paragraphName.classList.add('p_name');
+    paragraphName.textContent = `${firstName} ${lastName}`;
+
+    //Adding url for social medias
+    let ul_social = d.createElement('ul');
+    ul_social.classList.add('ul_social');
+    socialLinks.forEach(social => {
+        let li_social = d.createElement('li');
+        li_social.classList.add('li_social');
+        li_social.innerHTML = `<a class="link" href="${social.url}">${social.fontawesomeIcon}</a>`;
+        ul_social.appendChild(li_social);
+    });
+
+    //Adding paragraph with personal information
+    let paragraphInfo = d.createElement('p');
+    paragraphInfo.classList.add('information');
+    paragraphInfo.textContent = bio;
+
+    //Adding titles, skills and qualifications
+    let div_skills = d.createElement('div');
+    div_skills.classList.add('div_skills');
+
+    //Insert name into div
+    divInfo.appendChild(paragraphName);
+    divInfo.appendChild(ul_social);
+    divInfo.appendChild(paragraphInfo);
+    divInfo.appendChild(div_skills);
+
+    //Inser information div into wrapper
+    wrapper.appendChild(divInfo);
+};
