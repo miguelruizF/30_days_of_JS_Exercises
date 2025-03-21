@@ -150,6 +150,11 @@ function infoUser(){
     let div_skills = d.createElement('div');
     div_skills.classList.add('div_skills');
 
+    //Create lists
+    createList(titles, div_skills);
+    createList(skills, div_skills);
+    createList(qualifications, div_skills);
+
     //Insert name into div
     divInfo.appendChild(paragraphName);
     divInfo.appendChild(ul_social);
@@ -159,3 +164,15 @@ function infoUser(){
     //Inser information div into wrapper
     wrapper.appendChild(divInfo);
 };
+
+function createList(list, node){
+    let ul_list = d.createElement('ul');
+    ul_list.classList.add('ul_list');
+    list.forEach(item => {
+        let li_title = d.createElement('li');
+        li_title.classList.add('li_title');
+        li_title.textContent = `${item[0]} ${item[1]}`;
+        ul_list.appendChild(li_title);
+    });
+    node.appendChild(ul_list);
+}
