@@ -88,17 +88,20 @@ function listChallenge(){
     let ul_challenge = d.createElement('ul');
     ul_challenge.classList.add('challenge-list');
     challenge_container.appendChild(ul_challenge);
+    
     // Iterate through the challenges and create a li element for each challenge
     asabenehChallenges2020.challenges.forEach(challenge => {
         // console.log(challenge);
         // Destructure the challenge object
         const { name, topics, days, status, questions, projects, interviewQns, githubUrl } = challenge;
+        
         // Create a li element with a class name of challenge
         let li_challenge = d.createElement('li');
         li_challenge.classList.add('challenge');
         // Create a p element
         let p_title = d.createElement('p');
         p_title.textContent = name;
+        p_title.classList.add("p_title_style");
 
         let details = d.createElement('details');
         let summary = d.createElement('summary');
@@ -112,6 +115,18 @@ function listChallenge(){
 
         let p_status = d.createElement('p');
         p_status.textContent = status;
+
+        //Change background
+        if(p_status.textContent === "Done"){
+            li_challenge.style.backgroundColor = '#07e100';
+        }else if(p_status.textContent === "Ongoing"){
+            li_challenge.style.backgroundColor = '#f4e639';
+        }else if(p_status.textContent === "Coming"){
+            li_challenge.style.backgroundColor = '#ff6d61';
+        }else{
+            return;
+        }
+
         // Append the p element to the div element and the next container
         li_challenge.appendChild(p_title);
         li_challenge.appendChild(details);
