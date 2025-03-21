@@ -34,10 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         changeColor('.clock', 'backgroundColor');
         requestAnimationFrame(update);
     }
+    // Call functions
     update();
-    // Call the listChallenge function
     listChallenge();
     infoUser();
+    addKeywords();
 });
 
 const changeDate = () => {
@@ -151,11 +152,14 @@ function infoUser(){
     div_skills.classList.add('div_skills');
 
     //Create lists
-    createList(titles, div_skills);
-    createList(skills, div_skills);
-    createList(qualifications, div_skills);
+    createList(titles, div_skills, 'Titles');
+    createList(skills, div_skills, 'Skills');
+    createList(qualifications, div_skills, 'Qualifications');
 
-    //Insert name into div
+    //Add keywords
+
+
+    //Insert info into div
     divInfo.appendChild(paragraphName);
     divInfo.appendChild(ul_social);
     divInfo.appendChild(paragraphInfo);
@@ -165,7 +169,11 @@ function infoUser(){
     wrapper.appendChild(divInfo);
 };
 
-function createList(list, node){
+function createList(list, node, title){
+    let title_node = d.createElement('h4');
+    title_node.classList.add('title_h4');
+    title_node.textContent = title;
+    node.appendChild(title_node);
     let ul_list = d.createElement('ul');
     ul_list.classList.add('ul_list');
     list.forEach(item => {
@@ -175,4 +183,24 @@ function createList(list, node){
         ul_list.appendChild(li_title);
     });
     node.appendChild(ul_list);
+}
+
+function addKeywords(){
+    let keywords = asabenehChallenges2020.keywords;
+    let div_keywords = d.createElement('div');
+    div_keywords.classList.add('div_keywords');
+    let keywords_title = d.createElement('h4');
+    keywords_title.classList.add('keywords_title');
+    keywords_title.textContent = 'Keywords';
+    div_keywords.appendChild(keywords_title);
+    let ul_keywords = d.createElement('ul');
+    ul_keywords.classList.add('ul_keywords');
+    keywords.forEach(keyword => {
+        let li_keyword = d.createElement('li');
+        li_keyword.classList.add('li_keyword');
+        li_keyword.textContent = keyword;
+        ul_keywords.appendChild(li_keyword);
+    });
+    div_keywords.appendChild(ul_keywords);
+    wrapper.appendChild(div_keywords);
 }
