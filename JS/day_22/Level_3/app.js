@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     listChallenge();
     infoUser();
     addKeywords();
+    applyRandomColorsToKeywords()
 });
 
 const changeDate = () => {
@@ -224,4 +225,15 @@ function addKeywords(){
     });
     div_keywords.appendChild(ul_keywords);
     wrapper.appendChild(div_keywords);
+}
+
+function applyRandomColorsToKeywords() {
+    const keywordItems = document.querySelectorAll('.div_keywords .ul_keywords li');
+    keywordItems.forEach(item => {
+        item.style.backgroundColor = `rgb(
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)}
+        )`;
+    });
 }

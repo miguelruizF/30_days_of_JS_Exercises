@@ -87,3 +87,19 @@ li{
         }
     }
 }
+
+.div_keywords{
+    h4{
+        margin-bottom: 1rem;
+    }
+    .ul_keywords{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin: 0 2.5rem;
+        li{
+            padding: .3rem 1rem;
+            border-radius: 1rem
+        }
+    }
+}
