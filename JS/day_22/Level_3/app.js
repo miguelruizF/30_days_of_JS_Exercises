@@ -118,7 +118,7 @@ function listChallenge(){
 
         //Change background
         if(p_status.textContent === "Done"){
-            li_challenge.style.backgroundColor = '#07e100';
+            li_challenge.style.backgroundColor = '#32ff32';
         }else if(p_status.textContent === "Ongoing"){
             li_challenge.style.backgroundColor = '#f4e639';
         }else if(p_status.textContent === "Coming"){
@@ -185,9 +185,13 @@ function infoUser(){
 };
 
 function createList(list, node, title){
+    let div_skills = d.createElement('div');
+    div_skills.classList.add('div_skills_list');
+
     let title_node = d.createElement('h4');
     title_node.classList.add('title_h4');
     title_node.textContent = title;
+
     node.appendChild(title_node);
     let ul_list = d.createElement('ul');
     ul_list.classList.add('ul_list');
@@ -197,7 +201,9 @@ function createList(list, node, title){
         li_title.textContent = `${item[0]} ${item[1]}`;
         ul_list.appendChild(li_title);
     });
-    node.appendChild(ul_list);
+    div_skills.appendChild(title_node);
+    div_skills.appendChild(ul_list);
+    node.appendChild(div_skills);
 }
 
 function addKeywords(){
