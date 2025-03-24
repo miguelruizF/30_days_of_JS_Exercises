@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100dvh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1,h2,h3,h4{
+    text-wrap: balance;
+}
+
+p{
+    text-wrap: pretty;
+}
+
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+li{
+    list-style: none;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    padding: 0.5rem 0;
+    margin: 0.15rem;
+}
+
+.wrapper{
+    margin: 2% 15%;
+}
+
+.title{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.subtitle{
+    text-align: center;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.credits{
+    text-align: center;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    column-gap: 1.5rem;
+    margin-top: 1.5rem;
+    input{
+        width: 40%;
+        padding: .5rem .5rem;
+    }
+    button{
+        background-color: rgb(67, 175, 109) ;
+        border: none;
+        padding: .5rem 1rem;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+#input_numbers:target{
+    border: 2px solid rgb(67, 175, 109) ;
+}
