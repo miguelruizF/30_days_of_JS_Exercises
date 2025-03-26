@@ -71,9 +71,6 @@ li{
         padding: .5rem 1rem;
         color: white;
         font-weight: bold;
+        cursor: pointer;
     }
-}
-
-#input_numbers:target{
-    border: 2px solid rgb(67, 175, 109) ;
 }
