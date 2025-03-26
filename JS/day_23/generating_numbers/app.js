@@ -7,21 +7,22 @@ let input_Value = d.querySelector("#input_numbers");
 
 d.addEventListener('DOMContentLoaded', () => {
     formulario.addEventListener('submit', validacionFormulario);
+    
 }); 
 
 function validacionFormulario(e){
     e.preventDefault();
-    if(!requiredFields(input_Value)){
-        let ul = d.querySelector('.ul_container');
+    if(Number(input_Value.value) <= 0 || input_Value.value.trim === "" || typeof(input_Value.value) == 'string'){
+        alert('ingresa un valor o caracter valido');
+        return;
+    }
+
+    let ul = d.querySelector('.ul_container');
         if(ul){
             wrapper.removeChild(ul);
             createNumbers(0, obtainValues());
-        }else{
-            let ul_container = d.createElement('ul');
-            ul_container.classList.add('ul_container');
-            wrapper.appendChild(ul_container);
         }
-    }
+        console.log(typeof(input_Value.value))
 }
 
 function createNumbers(start, final){
@@ -63,15 +64,4 @@ function obtainValues() {
     // e.preventDefault();
     let input = Number(d.querySelector("#input_numbers").value);
     return input;
-}
-
-function requiredFields(input) {
-    let isRequired = false;
-    if(input.value.trim() === ""){
-        alert('ingresa un valor')
-        isRequired = true;
-    }else{
-        return;
-    }
-    return isRequired;
 }
