@@ -54,6 +54,13 @@ li{
     text-decoration: underline;
 }
 
+.form_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
 .formulario{
     display: flex;
     align-items: center;
@@ -61,16 +68,29 @@ li{
     width: 100%;
     column-gap: 1.5rem;
     margin-top: 1.5rem;
-    input{
+    #input_numbers{
         width: 40%;
         padding: .5rem .5rem;
+        border: 3px solid rgba(0,0,0,0);
+        box-sizing: border-box;
+        background-color: #bbbbbb;
+    }
+    #input_numbers:focus{
+        border: 3px solid #34db74;
+        outline: none;
     }
     button{
         background-color: rgb(67, 175, 109) ;
         border: none;
-        padding: .5rem 1rem;
+        padding: .7rem 1rem;
         color: white;
         font-weight: bold;
         cursor: pointer;
     }
+}
+
+.alerta{
+    color: #b93737;
+    justify-content: center;
+    font-weight: bold;
 }
