@@ -1,0 +1,94 @@
+{
+"planetas": [
+    {
+    "nombre": "Mercurio",
+    "gravedad": 3.7,
+    "radio_km": 2439.7,
+    "numero_lunas": 0,
+    "distancia_al_sol_km": 57910000,
+    "periodo_orbital_dias": 88,
+    "temperatura_media_C": 167
+    },
+    {
+    "nombre": "Venus",
+    "gravedad": 8.87,
+    "radio_km": 6051.8,
+    "numero_lunas": 0,
+    "distancia_al_sol_km": 108200000,
+    "periodo_orbital_dias": 225,
+    "temperatura_media_C": 464
+    },
+    {
+    "nombre": "Tierra",
+    "gravedad": 9.81,
+    "radio_km": 6371,
+    "numero_lunas": 1,
+    "distancia_al_sol_km": 149600000,
+    "periodo_orbital_dias": 365.25,
+    "temperatura_media_C": 15
+    },
+    {
+    "nombre": "Marte",
+    "gravedad": 3.71,
+    "radio_km": 3389.5,
+    "numero_lunas": 2,
+    "distancia_al_sol_km": 227900000,
+    "periodo_orbital_dias": 687,
+    "temperatura_media_C": -60
+    },
+    {
+    "nombre": "Júpiter",
+    "gravedad": 24.79,
+    "radio_km": 69911,
+    "numero_lunas": 80,
+    "distancia_al_sol_km": 778500000,
+    "periodo_orbital_dias": 4333,
+    "temperatura_media_C": -108
+    },
+    {
+    "nombre": "Saturno",
+    "gravedad": 10.44,
+    "radio_km": 58232,
+    "numero_lunas": 82,
+    "distancia_al_sol_km": 1433500000,
+    "periodo_orbital_dias": 10759,
+    "temperatura_media_C": -139
+    },
+    {
+    "nombre": "Urano",
+    "gravedad": 8.69,
+    "radio_km": 25362,
+    "numero_lunas": 27,
+    "distancia_al_sol_km": 2872500000,
+    "periodo_orbital_dias": 30687,
+    "temperatura_media_C": -195
+    },
+    {
+    "nombre": "Neptuno",
+    "gravedad": 11.15,
+    "radio_km": 24622,
+    "numero_lunas": 14,
+    "distancia_al_sol_km": 4495100000,
+    "periodo_orbital_dias": 60190,
+    "temperatura_media_C": -200
+    },
+    {
+    "nombre": "Plutón",
+    "gravedad": 0.62,
+    "radio_km": 1188.3,
+    "numero_lunas": 5,
+    "distancia_al_sol_km": 5913000000,
+    "periodo_orbital_dias": 90560,
+    "temperatura_media_C": -229
+    },
+    {
+    "nombre": "Luna de la Tierra",
+    "gravedad": 1.62,
+    "radio_km": 1737.4,
+    "numero_lunas": 0,
+    "distancia_al_sol_km": 384400,
+    "periodo_orbital_dias": 27.3,
+    "temperatura_media_C": -20
+    }
+]
+}
