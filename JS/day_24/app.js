@@ -9,7 +9,7 @@ const obtainPlanets = async() => {
         console.log(error);
     }
 }
-obtainPlanets()
+
 
 /* (function(){
     document.addEventListener('DOMContentLoaded', () => {
