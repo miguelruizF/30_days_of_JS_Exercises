@@ -1,13 +1,14 @@
 {
 "planetas": [
     {
-    "nombre": "Mercurio",
+    "nombre": "Mercury",
     "gravedad": 3.7,
     "radio_km": 2439.7,
     "numero_lunas": 0,
     "distancia_al_sol_km": 57910000,
     "periodo_orbital_dias": 88,
-    "temperatura_media_C": 167
+    "temperatura_media_C": 167,
+    "img": "../img/mercury.png"
     },
     {
     "nombre": "Venus",
@@ -16,79 +17,88 @@
     "numero_lunas": 0,
     "distancia_al_sol_km": 108200000,
     "periodo_orbital_dias": 225,
-    "temperatura_media_C": 464
+    "temperatura_media_C": 464,
+    "img": "../img/venus.png"
     },
     {
-    "nombre": "Tierra",
+    "nombre": "Eath",
     "gravedad": 9.81,
     "radio_km": 6371,
     "numero_lunas": 1,
     "distancia_al_sol_km": 149600000,
     "periodo_orbital_dias": 365.25,
-    "temperatura_media_C": 15
+    "temperatura_media_C": 15,
+    "img": "../img/earth.png"
     },
     {
-    "nombre": "Marte",
+    "nombre": "Mars",
     "gravedad": 3.71,
     "radio_km": 3389.5,
     "numero_lunas": 2,
     "distancia_al_sol_km": 227900000,
     "periodo_orbital_dias": 687,
-    "temperatura_media_C": -60
+    "temperatura_media_C": -60,
+    "img": "../img/mars.png"
     },
     {
-    "nombre": "Júpiter",
+    "nombre": "Jupiter",
     "gravedad": 24.79,
     "radio_km": 69911,
     "numero_lunas": 80,
     "distancia_al_sol_km": 778500000,
     "periodo_orbital_dias": 4333,
-    "temperatura_media_C": -108
+    "temperatura_media_C": -108,
+    "img": "../img/jupiter.png"
     },
     {
-    "nombre": "Saturno",
+    "nombre": "Saturn",
     "gravedad": 10.44,
     "radio_km": 58232,
     "numero_lunas": 82,
     "distancia_al_sol_km": 1433500000,
     "periodo_orbital_dias": 10759,
-    "temperatura_media_C": -139
+    "temperatura_media_C": -139,
+    "img": "../img/saturn.png"
     },
     {
-    "nombre": "Urano",
+    "nombre": "Uranus",
     "gravedad": 8.69,
     "radio_km": 25362,
     "numero_lunas": 27,
     "distancia_al_sol_km": 2872500000,
     "periodo_orbital_dias": 30687,
-    "temperatura_media_C": -195
+    "temperatura_media_C": -195,
+    "img": "../img/saturn.png"
     },
     {
-    "nombre": "Neptuno",
+    "nombre": "Neptune",
     "gravedad": 11.15,
     "radio_km": 24622,
     "numero_lunas": 14,
     "distancia_al_sol_km": 4495100000,
     "periodo_orbital_dias": 60190,
-    "temperatura_media_C": -200
+    "temperatura_media_C": -200,
+    "img": "../img/neptune.png"
     },
     {
-    "nombre": "Plutón",
+    "nombre": "Pluto",
     "gravedad": 0.62,
     "radio_km": 1188.3,
     "numero_lunas": 5,
     "distancia_al_sol_km": 5913000000,
     "periodo_orbital_dias": 90560,
-    "temperatura_media_C": -229
+    "temperatura_media_C": -229,
+    "img": "../img/pluto.png"
     },
     {
-    "nombre": "Luna de la Tierra",
+    "nombre": "Moon",
     "gravedad": 1.62,
     "radio_km": 1737.4,
     "numero_lunas": 0,
     "distancia_al_sol_km": 384400,
     "periodo_orbital_dias": 27.3,
-    "temperatura_media_C": -20
+    "temperatura_media_C": -20,
+    "img": "../img/moon.png"
     }
 ]
 }
