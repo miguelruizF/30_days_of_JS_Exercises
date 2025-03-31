@@ -1,8 +1,10 @@
 import { obtainPlanetsByID } from "./API.js";
-// obtainPlanets()
+
 let formulario = document.querySelector('#formulario');
 let input_mass = document.querySelector('#mass');
 let select_planet = document.querySelector('#select_planet');
+let info_content = document.querySelector('#info_content');
+let text_alert = document.querySelector('#text_alert');
 
 document.addEventListener('DOMContentLoaded', () => {
     formulario.addEventListener('submit', validarFormulario);
@@ -11,16 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
 function validarFormulario(e){
     e.preventDefault();
     if(isNaN(input_mass.value) || input_mass.value.trim() === ""){
-        alert('Ingresa un valor')
+        if(text_alert.classList.contains('hide')){
+            text_alert.classList.remove('hide');
+        }
+        text_alert.textContent = 'Ingresa un valor';
         return;
     }
     if(Number(input_mass.value <= 0)){
-        alert('Ingresa un valor mayor a cero')
+        if(text_alert.classList.contains('hide')){
+            text_alert.classList.remove('hide');
+        }
+        text_alert.textContent = 'Ingresa un valor mayor a cero';
         return;
     }
-    // console.log(input_mass.value) 
+
+    if(select_planet.selectedIndex === 0 || select_planet.value === ""){
+        if(text_alert.classList.contains('hide')){
+            text_alert.classList.remove('hide');
+        }
+        text_alert.textContent = 'Selecciona un planeta';
+        return;
+    }
     obtenerPlaneta(select_planet.value);
-    // console.log(select_planet.value)
 }
 
 async function obtenerPlaneta(id_planet) {
@@ -30,5 +44,6 @@ async function obtenerPlaneta(id_planet) {
         console.log(nombre,gravedad, img,id)
         }); */
     const { nombre, gravedad, img, id } = planet;
-    console.log(nombre,gravedad, img,id)
+    console.log(nombre,gravedad, img, id)
+    text_alert.classList.add('hide')
 }
