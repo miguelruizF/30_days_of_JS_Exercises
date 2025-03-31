@@ -8,7 +8,8 @@
     "distancia_al_sol_km": 57910000,
     "periodo_orbital_dias": 88,
     "temperatura_media_C": 167,
-    "img": "../img/mercury.png"
+    "img": "../img/mercury.png",
+    "id": 1
     },
     {
     "nombre": "Venus",
@@ -18,17 +19,19 @@
     "distancia_al_sol_km": 108200000,
     "periodo_orbital_dias": 225,
     "temperatura_media_C": 464,
-    "img": "../img/venus.png"
+    "img": "../img/venus.png",
+    "id": 2
     },
     {
-    "nombre": "Eath",
+    "nombre": "Earth",
     "gravedad": 9.81,
     "radio_km": 6371,
     "numero_lunas": 1,
     "distancia_al_sol_km": 149600000,
     "periodo_orbital_dias": 365.25,
     "temperatura_media_C": 15,
-    "img": "../img/earth.png"
+    "img": "../img/earth.png",
+    "id": 3
     },
     {
     "nombre": "Mars",
@@ -38,7 +41,8 @@
     "distancia_al_sol_km": 227900000,
     "periodo_orbital_dias": 687,
     "temperatura_media_C": -60,
-    "img": "../img/mars.png"
+    "img": "../img/mars.png",
+    "id": 4
     },
     {
     "nombre": "Jupiter",
@@ -48,7 +52,8 @@
     "distancia_al_sol_km": 778500000,
     "periodo_orbital_dias": 4333,
     "temperatura_media_C": -108,
-    "img": "../img/jupiter.png"
+    "img": "../img/jupiter.png",
+    "id": 5
     },
     {
     "nombre": "Saturn",
@@ -58,7 +63,8 @@
     "distancia_al_sol_km": 1433500000,
     "periodo_orbital_dias": 10759,
     "temperatura_media_C": -139,
-    "img": "../img/saturn.png"
+    "img": "../img/saturn.png",
+    "id": 6
     },
     {
     "nombre": "Uranus",
@@ -68,7 +74,8 @@
     "distancia_al_sol_km": 2872500000,
     "periodo_orbital_dias": 30687,
     "temperatura_media_C": -195,
-    "img": "../img/saturn.png"
+    "img": "../img/saturn.png",
+    "id": 7
     },
     {
     "nombre": "Neptune",
@@ -78,7 +85,8 @@
     "distancia_al_sol_km": 4495100000,
     "periodo_orbital_dias": 60190,
     "temperatura_media_C": -200,
-    "img": "../img/neptune.png"
+    "img": "../img/neptune.png",
+    "id": 8
     },
     {
     "nombre": "Pluto",
@@ -88,7 +96,8 @@
     "distancia_al_sol_km": 5913000000,
     "periodo_orbital_dias": 90560,
     "temperatura_media_C": -229,
-    "img": "../img/pluto.png"
+    "img": "../img/pluto.png",
+    "id": 9
     },
     {
     "nombre": "Moon",
@@ -98,7 +107,8 @@
     "distancia_al_sol_km": 384400,
     "periodo_orbital_dias": 27.3,
     "temperatura_media_C": -20,
-    "img": "../img/moon.png"
+    "img": "../img/moon.png",
+    "id": 10
     }
 ]
 }

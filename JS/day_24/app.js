@@ -1,31 +1,34 @@
-const url = 'http://localhost:3000/planetas';
+import { obtainPlanetsByID } from "./API.js";
+// obtainPlanets()
+let formulario = document.querySelector('#formulario');
+let input_mass = document.querySelector('#mass');
+let select_planet = document.querySelector('#select_planet');
 
-const obtainPlanets = async() => {
-    try {
-        const result = await fetch(url);
-        const planet = await result.json();
-        console.log(planet)
-    } catch (error) {
-        console.log(error);
+document.addEventListener('DOMContentLoaded', () => {
+    formulario.addEventListener('submit', validarFormulario);
+});
+
+function validarFormulario(e){
+    e.preventDefault();
+    if(isNaN(input_mass.value) || input_mass.value.trim() === ""){
+        alert('Ingresa un valor')
+        return;
     }
+    if(Number(input_mass.value <= 0)){
+        alert('Ingresa un valor mayor a cero')
+        return;
+    }
+    // console.log(input_mass.value) 
+    obtenerPlaneta(select_planet.value);
+    // console.log(select_planet.value)
 }
 
-
-/* (function(){
-    document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('submit', showPlanet);
-    });
-
-    async function showPlanet(e){
-        e.preventDefault();
-        const planets = await obtainPlanets();
-
-        console.log(planets)
-        planets.forEach(planet => {
-            console.log(planet)
-        });
-    }
-
-
-})();
- */
+async function obtenerPlaneta(id_planet) {
+    const planet = await obtainPlanetsByID(id_planet);
+    /* planetas.forEach(planeta => {
+        const { nombre, gravedad, img, id } = planeta;
+        console.log(nombre,gravedad, img,id)
+        }); */
+    const { nombre, gravedad, img, id } = planet;
+    console.log(nombre,gravedad, img,id)
+}

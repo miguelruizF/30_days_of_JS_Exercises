@@ -11,12 +11,23 @@
     <header class="">
         <div class="">
             <h1>Calculate a weight of an object on a planet</h1>
-
-            <input type="text" id="mass" placeholder="Mass in Kilogram" />
-            <select>
-                <option value='none'>--select planet-- </option>
-            </select>
-            <button>Calculate weight</button>
+            <form action="" id="formulario">
+                <input type="text" id="mass" placeholder="Mass in Kilogram" />
+                <select id="select_planet">
+                    <option value='none'>--select planet-- </option>
+                    <option value="1">Mercury</option>
+                    <option value="2">Venus</option>
+                    <option value="3">Earth</option>
+                    <option value="4">Mars</option>
+                    <option value="5">Jupiter</option>
+                    <option value="6">Saturn</option>
+                    <option value="7">Uranus</option>
+                    <option value="8">Neptune</option>
+                    <option value="9">Pluto</option>
+                    <option value="10">Moon</option>
+                </select>
+                <button type="submit">Calculate weight</button>
+            </form>
         </div>
 	</header>
 	<main class="">
