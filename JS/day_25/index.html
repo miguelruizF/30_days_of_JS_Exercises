@@ -7,14 +7,23 @@
 </head>
 <body>
     <header id="header">
-        <h1></h1>
-        <h2></h2>
+        <h1>World Countries Data</h1>
+        <h2>Currently, we have 250 countries</h2>
     </header>
     <main>
-        <div></div>
-        <div></div>
+        <div>
+            <div>
+                <button type="button" class="btn" id="population">POPULATION</button>
+                <button type="button" class="btn" id="languages">LANGUAGES</button>
+            </div>
+            <p id="text_btn">Aqui va el texto dependiendo del boton clicleado</p>
+        </div>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
     </main>
 
     <script type="module" src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
