@@ -3,6 +3,7 @@ import { countries_data } from "./data/countries_data.js";
 const btnPopulation = document.getElementById('population');
 const btnLanguages = document.getElementById('languages');
 const container = document.getElementById('container');
+const subtitulo = document.getElementById('text_btn');
 
 document.addEventListener('DOMContentLoaded', () => {
     btnPopulation.addEventListener('click', createPopulation);
@@ -51,6 +52,7 @@ const createPopulation = () => {
         }
     });
     
+    subtitulo.textContent = '10 Most Populated Countries in the world';
 }
 
 const createLanguages = () => {
@@ -104,4 +106,6 @@ const createLanguages = () => {
             }
         }
     });
+
+    subtitulo.textContent = '10 Most Spoken languages in the world';
 }
