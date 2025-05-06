@@ -1,1 +1,1 @@
-import { countries } from "countries.js";
+import { countries } from "./data/countries.js";
