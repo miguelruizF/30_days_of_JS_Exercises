@@ -1,3 +1,19 @@
+:root{
+    /*Colors*/
+    --title: #fff;
+    --buttons: #715bf1;
+
+    /*Effects*/
+    --hover: #5d09e4;
+
+    /*Text*/
+    --bold: bold;
+    --light: 100;
+    --big: 3rem;
+    --medium: 2rem;
+    --small: 1rem;
+}
+
 * {
     margin: 0;
 	padding: 0;
@@ -15,9 +31,58 @@ body{
 
 header{
     width: 100%;
-    height: 50%;
-    background-image: url(./images/globe-2.jpg);
+    height: 60vh;
+    background-image: linear-gradient(rgba(61, 154, 226, 0.19)), linear-gradient(rgba(61, 154, 226, 0.19)), url("./images/globe-2.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    .div_hero{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .title{
+            color: var(--title);
+            font-weight: var(--bold);
+            font-size: var(--big);
+            letter-spacing: 10px;
+        }
+        .stadistics{
+            margin: .5rem 0 1rem 0;
+            .text{
+                color: var(--title);
+                font-weight: var(--bold);
+            }
+        }
+    }
+}
+
+.formulario{
+    .buttons{
+        margin: 1rem 0;
+        button{
+            background-color: var(--buttons);
+            color: var(--title);
+            font-weight: var(--bold);
+            padding: .5rem .7rem;
+            border-radius: 5px;
+            transition: all .5s;
+        }
+        button:hover{
+            background-color: var(--hover);
+        }
+    }
+    .inputs{
+        margin: .7rem 0;
+        input{
+            width: 100%;
+            border-radius: 50px;
+            padding: .5rem;
+        }
+        input:focus{
+            border: .5px solid var(--buttons);
+            background-color:#F0F8FF;
+        }
+    }
 }
