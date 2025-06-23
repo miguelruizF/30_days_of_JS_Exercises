@@ -27,6 +27,7 @@
 body{
     min-height: 100dvh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden; /*Evita el desbordamiento horizontal*/
 }
 
 button{
@@ -104,7 +105,8 @@ main{
     display: flex;
     justify-content: center;
     .cards{
-        width: 85%;
+        width: 100%;
+        max-width: 1200px; 
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: 150px;
