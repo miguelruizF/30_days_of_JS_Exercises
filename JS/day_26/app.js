@@ -5,15 +5,18 @@ let formulario = document.querySelector('#formulario');
 let btn_startWord = document.querySelector('#start');
 let contenedor_texto = document.querySelector('#text_info');
 let input_text = document.querySelector('#input_text');
+let btn_anyWord = document.querySelector('#anyWord');
 
 let ascending = true;
 let isSelected = false;
+let isAnySelected = false;
 let searchString = "";
 
 document.addEventListener('DOMContentLoaded', () => {
     showCountries();
     orderCountries();
     btn_startWord.addEventListener('click', searchOfWord);
+    btn_anyWord.addEventListener('click', anyWordHandler);
 });
 
 function showCountries(){
@@ -37,15 +40,40 @@ function orderCountries(){
 
 function searchOfWord(e){
     e.preventDefault();
+    // if(btn_anyWord.classList.contains('active')) return;
+    if(isAnySelected) return;
     isSelected = !isSelected;
     if(isSelected){
         btn_startWord.style.backgroundColor = '#5d09e4';
+        btn_startWord.classList.add('active');
         searchString = "";
         document.addEventListener('keydown', searchingCountry);
     }else{
         btn_startWord.style.backgroundColor = '';
+        btn_startWord.classList.remove('active');
         document.removeEventListener('keydown', searchingCountry);
     }
+}
+
+function anyWordHandler(e){
+    e.preventDefault();
+    // if(btn_startWord.classList.contains('active')) return;
+    if(isSelected) return;
+
+    isAnySelected = !isAnySelected;
+    if(isAnySelected){
+        btn_anyWord.style.backgroundColor = '#5d09e4';
+        btn_anyWord.classList.add('active');
+        searchString = "";
+        // document.addEventListener('keydown', searchingCountry);
+    }else{
+        btn_anyWord.style.backgroundColor = '';
+        btn_anyWord.classList.remove('active');
+        // document.removeEventListener('keydown', searchingCountry);
+    }
+
+
+    // btn_anyWord.classList.toggle('active');
 }
 
 function searchingCountry(e){
