@@ -124,3 +124,8 @@ main{
         }
     }
 }
+
+.text_style{
+    margin-top: 1rem;
+    font-weight: var(--bold);
+}

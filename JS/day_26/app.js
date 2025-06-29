@@ -3,6 +3,8 @@ let cards_container = document.querySelector('#cards');
 let btn_order = document.querySelector('#order');
 let formulario = document.querySelector('#formulario');
 let btn_startWord = document.querySelector('#start');
+let contenedor_texto = document.querySelector('#text_info');
+let input_text = document.querySelector('#input_text');
 
 let ascending = true;
 let isSelected = false;
@@ -59,10 +61,20 @@ function searchingCountry(e){
     const filtered = countries.filter(country => country.toLowerCase().startsWith(searchString.toLowerCase()));
 
     cards_container.innerHTML = '';
+    contenedor_texto.innerHTML = '';
     filtered.forEach(country => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.textContent = country;
         cards_container.appendChild(card);
     });
+
+    if(searchString.length > 0){
+        const paragraph = document.createElement('p');
+        paragraph.classList.add('text_style');
+        paragraph.innerHTML = `Countries start with ${searchString} are ${filtered.length}`;
+        contenedor_texto.appendChild(paragraph);
+    }else{
+        contenedor_texto.innerHTML = ""
+    }
 }
