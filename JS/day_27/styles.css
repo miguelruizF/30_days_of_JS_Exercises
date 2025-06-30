@@ -1,0 +1,54 @@
+:root{
+    /*text*/
+    --lingthen: 100;
+    --medium: 500;
+    --bold: 700;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    min-height: 100dvh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    overflow-x: hidden; /*Evita el desbordamiento horizontal*/
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: 5rem;
+    font-weight: var(--medium);
+    letter-spacing: 2rem;
+}
+
+.profession{
+    display: flex;
+    align-items: center;
+}

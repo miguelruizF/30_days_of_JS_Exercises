@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Protfolio 30 Days of Javascript</title>
+    <title>Portfolio 30 Days of Javascript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
 </head>
 <body>
-    <div>
-        <header id="hero" class="hero"></header>
-        <main id="main" class="main"></main>
-        <footer id="footer" class="footer"></footer>
+    <div id="container" class="container">
+        <header id="hero" class="hero">
+            <h1 class="title">Miguel Angel Ruiz</h1>
+            <div id="profession" class="profession">
+                <p>I am</p>
+                <div class="text_profession"></div>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <p id="biography" class="text"></p>
+            <div id="skills" class="skills_conteiner">
+                <div class="skill">JAVASCRIPT FOR EVERYONE</div>
+                <div class="skill">30DAYS OF PYTHON</div>
+                <div class="skill">30DAYS OF JAVASCRIPT</div>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <p class="text text_footer">The technologies I teach <canvas id="techs" class="techs"></canvas></p>
+        </footer>
     </div>
     <script src="app.js"></script>
+    
 </body>
 </html>
