@@ -56,5 +56,32 @@ img {
     align-items: center;
     background-color: var(--pink);
     padding-left: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+
+main{
+    .text{
+        font-size: 1.8rem;
+        font-weight: var(--lingthen + 100);
+    }
+    .skills_container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        gap: 1rem 2rem;
+        .skill{
+            border: none;
+            border-radius: 5px;
+            height: 150px;
+            align-content: center;
+            cursor: pointer;
+            filter: blur(3px);
+            transition: .5s ease-out;
+        }
+        .skill:hover{
+            filter: blur(0);
+            background-color: var(--pink);
+        }
+    }
 }
