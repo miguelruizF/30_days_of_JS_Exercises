@@ -3,6 +3,9 @@
     --lingthen: 100;
     --medium: 500;
     --bold: 700;
+
+    /*Color*/
+    --pink: #ecb3fd8a;
 }
 
 *,
@@ -38,7 +41,7 @@ img {
 }
 
 .container {
-    max-width: 120rem;
+    max-width: 100rem;
     margin: 0 auto;
 }
 
@@ -51,4 +54,7 @@ img {
 .profession{
     display: flex;
     align-items: center;
+    background-color: var(--pink);
+    padding-left: 2rem;
+    font-size: 2rem;
 }
